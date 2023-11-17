@@ -8,7 +8,6 @@
     width: 100%;
     background-image: url(img/background.png);
     background-position: center;
-    background-attachment: fixed;
     background-size: cover;
     position: relative;
     overflow: hidden;
@@ -27,7 +26,7 @@
 }
 .nav-links{
     flex: 1;
-    text-align: center;  
+    text-align: center;
 }
 
 .nav-links ul li{
@@ -59,7 +58,7 @@
 }
 
 .authorization-form{
-    text-align: right; 
+    text-align: right;
 }
 
 .authorization-form ul li{
@@ -96,7 +95,7 @@
     float: left;
     text-align: left;
     word-wrap: break-word;
-    
+
 } */
 
 .text-box{
@@ -105,7 +104,7 @@
     width: 500px;
     color: #fff;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter:drop-shadow(5px 5px 5px #222); 
+    filter:drop-shadow(5px 5px 5px #222);
 }
 
 .text-box h1{
@@ -160,26 +159,52 @@
 
 .button_more {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
+    gap: 30px;
     filter: drop-shadow(5px 5px 5px #222);
     position:absolute; /* Зафиксированное позиционирование относительно вьюпорта */
     bottom: 0; /* Расположение в самом низу окна браузера */
     left: 50%; /* Центрирование по горизонтали */
-    transform: translateX(-50%); /* Сдвигаем элемент на половину его ширины влево */
+    transform: translateX(-50%); Сдвигаем элемент на половину его ширины влево
 }
 
 .button_more-text a{
+    font-weight: bold;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    padding: 8px 24px;
     color: #fff;
     text-decoration: none;
 }
 
+@keyframes button_png {
+    0%, 100% {
+        opacity: 1;
+        transform: translateX(0); /* Возвращение в исходное положение */
+      }
+      25%, 75% {
+        opacity: 0.5;
+        transform: translateX(-10px); /* Среднее положение вверх */
+      }
+      50% {
+        opacity: 0.1;
+        transform: translateX(-20px); /* Полное смещение вверх */
+      }
+    }
 .button_more-png img{
     width: 50px;
     filter: brightness(0) invert(1);
     rotate: 90deg;
+    animation-name: button_png;
+    animation-duration: 4s;
+    animation-timing-function: linear; /* Добавил плавность анимации */
+    animation-iteration-count: infinite; /* Анимация будет повторяться бесконечно */
 }
+
+
 
 .version{
     display: inline-block;
