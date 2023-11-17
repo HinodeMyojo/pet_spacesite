@@ -158,13 +158,27 @@
     color: #09cff8;
 }
 
-.button_more{
+.button_more {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
     color: #fff;
-    filter:drop-shadow(5px 5px 5px #222); 
+    filter: drop-shadow(5px 5px 5px #222);
+    position:absolute; /* Зафиксированное позиционирование относительно вьюпорта */
+    bottom: 0; /* Расположение в самом низу окна браузера */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Сдвигаем элемент на половину его ширины влево */
+}
+
+.button_more-text a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.button_more-png img{
+    width: 50px;
+    filter: brightness(0) invert(1);
+    rotate: 90deg;
 }
 
 .version{
