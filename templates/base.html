@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'img/fav/favicon.ico' %}" type="image/x-icon" >
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+</head>
+<body>
+    {% include "includes/header.html" %}
+    {% block content %}{% endblock content %}
+    {% include "includes/footer.html" %}
+</body>
+</html>

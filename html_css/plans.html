@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+     <!-- Add the slick-theme.css if you want default styling -->
+     <link rel="stylesheet" type="text/css" href="slick/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="slick/slick/slick-theme.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -11,25 +15,96 @@
 </head>
 <body>
     <section class="header">
-        <nav>
+        <nav class="nav">
             <a href="index.html"><img src="img/logo.png"></a>
             <div class="nav-links">
                 <ul>
-                    <li><a href="#">Главная страница</a></li> 
+                    <li><a href="index.html">Главная страница</a></li> 
                     <li><a href="#">Тарифы</a></li>
                     <li><a href="#">Как это работает</a></li>
                     <li><a href="#">О нас</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Служба поддержки</a></li>
+                </ul>
+            </div>
+            <div class="authorization-form">
+                <ul>
+                    <li><a href="">Личный кабинет</a></li>
                 </ul>
             </div>
         </nav>
-        <div class="text-box">
-            <a class="version" href=""><b>BETA</b></a>
-            <h1>Орбитальный интернет</h1>
-            <p>Новейшая технология связи, которая предоставляет быстрый доступ к сети Интернет из любой точки земного шара.</p>
-            <a class="choose-options" href="">Выбрать тариф</a>
-            <a class="choose-business" href="">Юр. лицам</a>
+    </section>
+    <section class="plans">
+        <div class="plans-container">
+            <h2>Выберите тарифный план</h2>
+            <div class="plans-box">
+                <div class="plans-box-pricing">
+                <!-- Тарифный план Уран -->
+                <div>
+                    <div class="plans-cell">
+                        <h3>УранНч</h3>
+                        <hr>
+                        <p>Скорость: 100 Мбит/с</p>
+                        <p>Стоимость: 500 руб/мес</p>
+                        <p>Продолжительность: 12 мес</p>
+                        <p>Установка: 2500 руб</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="plans-cell">
+                        <h3>Уран</h3>
+                        <hr>
+                        <p>Скорость: 100 Мбит/с</p>
+                        <p>Стоимость: 500 руб/мес</p>
+                        <p>Продолжительность: 12 мес</p>
+                        <p>Установка: 2500 руб</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="plans-cell">
+                        <h3>Уран</h3>
+                        <hr>
+                        <p>Скорость: 100 Мбит/с</p>
+                        <p>Стоимость: 500 руб/мес</p>
+                        <p>Продолжительность: 12 мес</p>
+                        <p>Установка: 2500 руб</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="plans-cell">
+                        <h3>Уран</h3>
+                        <hr>
+                        <p>Скорость: 100 Мбит/с</p>
+                        <p>Стоимость: 500 руб/мес</p>
+                        <p>Продолжительность: 12 мес</p>
+                        <p>Установка: 2500 руб</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="plans-cell">
+                        <h3>Уран</h3>
+                        <hr>
+                        <p>Скорость: 100 Мбит/с</p>
+                        <p>Стоимость: 500 руб/мес</p>
+                        <p>Продолжительность: 12 мес</p>
+                        <p>Установка: 2500 руб</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="plans-cell">
+                        <h3>УранКнч</h3>
+                        <hr>
+                        <p>Скорость: 100 Мбит/с</p>
+                        <p>Стоимость: 500 руб/мес</p>
+                        <p>Продолжительность: 12 мес</p>
+                        <p>Установка: 2500 руб</p>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
     </section>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="plans.js"></script>
 </body>
-</html>

@@ -1,0 +1,20 @@
+{% load static %}
+<section class="header">
+    <nav class="nav">
+        <a href="index.html"><img src={% static "img/logo.png" %}></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{% url "home:homepage" %}">Главная страница</a></li> 
+                <li><a href="#">Тарифы</a></li>
+                <li><a href="#">Как это работает</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Служба поддержки</a></li>
+            </ul>
+        </div>
+        <div class="authorization-form">
+            <ul>
+                <li><a href="">Личный кабинет</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>
