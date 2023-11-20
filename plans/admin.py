@@ -1,3 +1,10 @@
 from django.contrib import admin
 
 # Register your models here.
+from .models import *
+
+admin.site.register(PlansTitleSpeed)
+admin.site.register(PlansEquipment)
+admin.site.register(PlansMonthlySub)
+admin.site.register(PlansOption)
+admin.site.register(PlansPeriod)

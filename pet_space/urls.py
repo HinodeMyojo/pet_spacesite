@@ -18,5 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('homepage.urls', namespace='home'))
+    path('', include('homepage.urls', namespace='home')),
+    path('plans/', include('plans.urls', namespace='plans')),
+    path("__debug__/", include("debug_toolbar.urls")),
 ]
