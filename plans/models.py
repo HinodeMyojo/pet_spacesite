@@ -20,6 +20,11 @@ class BaseModel(models.Model):
 class PlansOption(BaseModel):
     """База опций связи (Инт, Инт+ТВ и тд.)"""
     option = models.CharField(max_length=128, verbose_name='Опции связи')
+    class Meta:
+        verbose_name = 'Опции связи'
+        verbose_name_plural = 'Опции связи'
+    def __str__(self):
+        return self.option
 
 class PlansEquipment(BaseModel):
     """База устанавливаемого оборудования
@@ -30,14 +35,30 @@ class PlansEquipment(BaseModel):
     """
     equipment = models.CharField(max_length=128, verbose_name='Тип оборудования')
     cost = models.IntegerField(verbose_name='Стоимость установки')
+    class Meta:
+        verbose_name = 'Устанавливаемое оборудование'
+        verbose_name_plural = 'Устанавливаемое оборудование'
+    def __str__(self):
+        return self.equipment
 
 class PlansMonthlySub(BaseModel):
     """Стоимость месячной подписки"""
     price = models.IntegerField(verbose_name='Стоимость месячной подписки')
+    class Meta:
+        verbose_name = 'Месячная подписка'
+        verbose_name_plural = 'Месячные подписки'
+    def __str__(self):
+        return self.price
+        
 
 class PlansPeriod(BaseModel):
     """Период подписки"""
     period = models.IntegerField(verbose_name='Период подписки')
+    class Meta:
+        verbose_name = 'Период подписки'
+        verbose_name_plural = 'Период подписок'
+    def __str__(self):
+        return str(self.period)
 
 class PlansTitleSpeed(BaseModel):
     """Описание тарифов
@@ -51,19 +72,29 @@ class PlansTitleSpeed(BaseModel):
     price = models.ForeignKey(
         PlansMonthlySub,
         on_delete=models.SET_NULL,
-        null=True)
+        null=True,
+        verbose_name='Стоимость в месяц')
     option = models.ForeignKey(
         PlansOption,
         on_delete=models.SET_NULL,
-        null=True)
+        null=True,
+        verbose_name='Опция')
     equipment = models.ForeignKey(
         PlansEquipment,
         on_delete=models.SET_NULL,
-        null=True)
+        null=True,
+        verbose_name='Оборудование')
     period = models.ForeignKey(
         PlansPeriod,
         on_delete=models.SET_NULL,
-        null=True)
+        null=True,
+        verbose_name='Период')
+    class Meta:
+        verbose_name = 'Описание тарифа'
+        verbose_name_plural = 'Описание тарифов'
+
+    def __str__(self):
+        return self.title
 
 
 
