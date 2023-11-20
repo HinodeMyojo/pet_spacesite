@@ -5,6 +5,6 @@ from .models import *
 
 admin.site.register(PlansTitleSpeed)
 admin.site.register(PlansEquipment)
-admin.site.register(PlansMonthlySub)
 admin.site.register(PlansOption)
 admin.site.register(PlansPeriod)
+admin.site.register(PlansSpeed)

@@ -40,17 +40,6 @@ class PlansEquipment(BaseModel):
         verbose_name_plural = 'Устанавливаемое оборудование'
     def __str__(self):
         return self.equipment
-
-class PlansMonthlySub(BaseModel):
-    """Стоимость месячной подписки"""
-    price = models.IntegerField(verbose_name='Стоимость месячной подписки')
-    class Meta:
-        verbose_name = 'Месячная подписка'
-        verbose_name_plural = 'Месячные подписки'
-    def __str__(self):
-        return self.price
-        
-
 class PlansPeriod(BaseModel):
     """Период подписки"""
     period = models.IntegerField(verbose_name='Период подписки')
@@ -59,6 +48,15 @@ class PlansPeriod(BaseModel):
         verbose_name_plural = 'Период подписок'
     def __str__(self):
         return str(self.period)
+    
+
+class PlansSpeed(BaseModel):
+    speed = models.IntegerField(verbose_name='Скорость интернета')
+    class Meta:
+        verbose_name = 'Скорость интернета'
+        verbose_name_plural = 'Скорость интернета'
+    def __str__(self):
+        return str(self.speed)
 
 class PlansTitleSpeed(BaseModel):
     """Описание тарифов
@@ -68,12 +66,7 @@ class PlansTitleSpeed(BaseModel):
     price, option, equipment, period: связанные таблицы
     """
     title = models.CharField(max_length=128, verbose_name='Название тарифа')
-    speed = models.CharField(max_length=128, verbose_name='Скорость тарифа')
-    price = models.ForeignKey(
-        PlansMonthlySub,
-        on_delete=models.SET_NULL,
-        null=True,
-        verbose_name='Стоимость в месяц')
+    price = models.IntegerField(verbose_name='Стоимость месячной подписки', null=True)
     option = models.ForeignKey(
         PlansOption,
         on_delete=models.SET_NULL,
@@ -89,6 +82,11 @@ class PlansTitleSpeed(BaseModel):
         on_delete=models.SET_NULL,
         null=True,
         verbose_name='Период')
+    speed = models.ForeignKey(
+        PlansSpeed,
+        on_delete=models.SET_NULL,
+        null=True,
+        verbose_name='Скорость интернета')
     class Meta:
         verbose_name = 'Описание тарифа'
         verbose_name_plural = 'Описание тарифов'
