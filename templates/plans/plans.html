@@ -3,6 +3,19 @@
 {% block title %}Тарифы{% endblock title %}
 {% block content %}
 <div class=TEST>
-    <h1>Пока тестовая страница</h1>
+    <h1>Главная страница</h1>
+    {% for plan in plan_list  %}    
+        <ul>
+            <li></li>
+            <li></li>
+            <li>ID: {{ plan.id }}</li>
+            <li>Название: {{ plan.title }}</li>
+            <li>Цена: {{ plan.price }}</li>
+            <li>Опция: {{ plan.option }}</li>
+            <li>Оборудование: {{ plan.equipment }}</li>
+            <li>Период: {{ plan.period }}</li>
+            <li>Скорость: {{ plan.speed }}</li>
+        </ul>
+    {% endfor %}
 </div>
 {% endblock %}

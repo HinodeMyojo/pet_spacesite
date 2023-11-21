@@ -67,6 +67,7 @@ class PlansTitleSpeed(BaseModel):
     """
     title = models.CharField(max_length=128, verbose_name='Название тарифа')
     price = models.IntegerField(verbose_name='Стоимость месячной подписки', null=True)
+    is_on_main = models.BooleanField(verbose_name='Отображение', default=True)
     option = models.ForeignKey(
         PlansOption,
         on_delete=models.SET_NULL,
