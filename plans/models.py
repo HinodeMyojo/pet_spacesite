@@ -91,6 +91,7 @@ class PlansTitleSpeed(BaseModel):
     class Meta:
         verbose_name = 'Описание тарифа'
         verbose_name_plural = 'Описание тарифов'
+        ordering = ('price',)
 
     def __str__(self):
         return self.title
