@@ -29,9 +29,6 @@ def index(request):
     # Render the template with the context
     return render(request, template_name, context)
 
-from django.shortcuts import render, get_object_or_404
-from .models import PlansTitleSpeed
-
 def detail(request, pk):
     """
     Renders the detail view for a specific plan.
@@ -44,24 +41,15 @@ def detail(request, pk):
         HttpResponse: The HTTP response object containing the rendered template.
     """
     template_name = 'plans/detail.html'
-    
+
     # Retrieve the plan detail from the database
     plan_detail = get_object_or_404(
-        PlansTitleSpeed.objects.values('id', 'title', 'price', 'option', 'equipment', 'period', 'speed').filter(is_on_main=True),
+        PlansTitleSpeed.objects.values(
+            'id', 'title', 'price', 'option',
+            'equipment', 'period', 'speed'
+        ).filter(is_on_main=True),
         pk=pk
     )
-    
-    context = {
-        'plan_detail': plan_detail
-    }
-    
-    return render(request, template_name, context)
-
-
-def detail(request, pk):
-    template_name = 'plans/detail.html'
-
-    plan_detail = get_object_or_404(PlansTitleSpeed.objects.values('id', 'title', 'price', 'option', 'equipment', 'period', 'speed').filter(is_on_main=True),pk=pk)
 
     context = {
         'plan_detail': plan_detail

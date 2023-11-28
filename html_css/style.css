@@ -1,4 +1,4 @@
-*{  
+*{
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
@@ -6,10 +6,10 @@
 .header {
     background-color: #000;
     overflow: hidden;
-    position: fixed;  
-    top: 0;  
-    z-index: 100;  
-    width: 100%; 
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
 }
 
 .nav{
@@ -225,7 +225,7 @@
     position: relative;
     overflow: hidden;
   }
-  
+
   .desc-box {
     margin: 3%;
     display: flex;
@@ -239,7 +239,7 @@
     font-size: 50px;
     line-height: 1.5;
   }
-  
+
   .desc-page {
     margin: 3% 8%;
     display: flex;
@@ -247,7 +247,7 @@
     align-items: center;
     gap: 40px; /* расстояние между блоками desc_item */
   }
-  
+
   .desc_item {
     color: #222;
     width: 620px; /* устанавливаем фиксированную ширину 100% */
@@ -256,17 +256,17 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .desc_item img {
     margin: auto; /* применяем margin: auto; для центрирования изображений */
     width: 100%; /* устанавливаем фиксированную ширину 100% */
     height: 100%; /* устанавливаем фиксированную высоту 100% */
     object-fit: cover; /* уменьшаем изображение, чтобы оно полностью заполнило контейнер */
     border: transparent;
-    border-radius: 40px 10px; 
-    
+    border-radius: 40px 10px;
+
   }
-  
+
   .desc_item h2 {
     font-size: 20px;
     margin-top: 10px; /* добавляем небольшой отступ сверху */
@@ -307,10 +307,10 @@
 .plans-container {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    min-height: 100vh; 
-    
+    min-height: 100vh;
+
 }
 
 .plans-container h2{
@@ -319,28 +319,28 @@
     font-size: 40px;
 
 }
-  
+
 .plans-box {
     width: 100;
-    display: flex; 
+    display: flex;
     flex-direction: row;
-  
-  
+
+
 }
 
 .plans-box-pricing {
     min-width: 0px;
     max-width: 1250px;
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
 }
-  
+
 .plans-cell {
     margin: 2%;
     padding: 15px;
     border: 2px solid rgba(207, 207, 207, 0.432);
     border-radius: 10px;
-    
+
 }
 
 .plans-cell h3{
@@ -369,7 +369,7 @@
     font-size: 100%;
     margin: 0px 5px 10px 10px;
 }
-  
+
 .text-2 {
     font-size: 70%;
     margin: -10px 36px 20px;
@@ -409,5 +409,5 @@
 
 
 .plans-cell:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }

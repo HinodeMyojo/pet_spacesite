@@ -2,286 +2,54 @@
 {% load static %}
 {% block title %}Тарифы{% endblock title %}
 {% block content %}
-<div class=TEST>
-    <h1>Главная страница</h1>
-    {% for plan in plan_list  %}    
-        <ul>
-            <li></li>
-            <li></li>
-            <li>ID: {{ plan.id }}</li>
-            <li>Название: {{ plan.title }}</li>
-            <li>Цена: {{ plan.price }}</li>
-            <li>Опция: {{ plan.option }}</li>
-            <li>Оборудование: {{ plan.equipment }}</li>
-            <li>Период: {{ plan.period }}</li>
-            <li>Скорость: {{ plan.speed }}</li>
-        </ul>
-    {% endfor %}
-</div>
-{% endblock %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-     <!-- Add the slick-theme.css if you want default styling -->
-     <link rel="stylesheet" type="text/css" href="slick/slick/slick.css"/>
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="slick/slick/slick-theme.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <title>Space!</title>
-</head>
-<body>
-    <section class="header">
-        <nav class="nav">
-            <a href="index.html"><img src="img/logo.png"></a>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="index.html">Главная страница</a></li> 
-                    <li><a href="#">Тарифы</a></li>
-                    <li><a href="#">Как это работает</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Служба поддержки</a></li>
-                </ul>
-            </div>
-            <div class="authorization-form">
-                <ul>
-                    <li><a href="">Личный кабинет</a></li>
-                </ul>
-            </div>
-        </nav>
-    </section>
-    <section class="plans">
-        <div class="plans-container">
-            <h2>Выберите тарифный план</h2>
-            <div class="plans-box">
-                <div class="plans-box-pricing">
-                <!-- Тарифный план Уран -->
+<section class="plans">
+    <div class="plans-container">
+        <h2>Выберите тарифный план</h2>
+        <div class="plans-box">
+            {% for plan in plan_list %}
+            <div class="plans-box-pricing">
                 <div>
                     <div class="plans-cell">
-                        <h3>УранНч</h3>
+                        <h3>{{ plan.title }}</h3>
                         <div class="content-block">
-                            <div class="image"><img src="img/plans/internet.png"></div>
-                            <div class="text-1">100 Мбит/с</div>
-                        </div>
+                            <div class="image"><img src="{% static 'img/plans/internet.png' %}"></div>
+                            <div class="text-1">{{ plan.speed }}</div>
                         <div class="text-2">Безлимитный интернет</div>
                         <div class="content-block">
-                            <div class="image"><img src="img/plans/price.png" alt=""></div>
-                            <div class="text-1">500 руб/мес</div>
+                            <div class="image"><img src="{% static 'img/plans/price.png' %}" alt=""></div>
+                            <div class="text-1">{{ plan.price }}</div>
                         </div>
                         <div class="text-2">Отличный вариант!</div>
                         <div class="content-block">
-                            <div class="image"><img src="img/plans/back-in-time.png" alt=""></div>
-                            <div class="text-1">12 месяцев</div>
+                            <div class="image"><img src="{% static 'img/plans/back-in-time.png' %}" alt=""></div>
+                            <div class="text-1">{{ plan.period }}</div>
                         </div>
                         <div class="text-2">Надолго хватит!</div>
                         <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite.png" alt=""></div>
-                            <div class="text-1">Буран (М1)</div>
+                            <div class="image"><img src="{% static 'img/plans/satellite.png' %}" alt=""></div>
+                            <div class="text-1">{{ plan.equipment }}</div>
                         </div>
                         <div class="text-2">Наша разработка</div>
                         <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite-eqp.png" alt=""></div>
-                            <div class="text-1">2500 руб.</div>
+                            <div class="image"><img src="{% static 'img/plans/satellite-eqp.png' %}" alt=""></div>
+                            <div class="text-1">{{ plan.option }}</div>
                         </div>
                         <div class="text-2">Не так уж и дорого!</div>
                         <div class="content-description">
-                            <h3>МЫ САМЫЕ АХУЕННЫЕ</h3>
+                            <h3>Просто описание</h3>
                         </div>
                         <div class="content-button">
                             <button>Подключить</button>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <div class="plans-cell">
-                        <h3>УранНч</h3>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/internet.png"></div>
-                            <div class="text-1">100 Мбит/с</div>
-                        </div>
-                        <div class="text-2">Безлимитный интернет</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/price.png" alt=""></div>
-                            <div class="text-1">500 руб/мес</div>
-                        </div>
-                        <div class="text-2">Отличный вариант!</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/back-in-time.png" alt=""></div>
-                            <div class="text-1">12 месяцев</div>
-                        </div>
-                        <div class="text-2">Надолго хватит!</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite.png" alt=""></div>
-                            <div class="text-1">Буран (М1)</div>
-                        </div>
-                        <div class="text-2">Наша разработка</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite-eqp.png" alt=""></div>
-                            <div class="text-1">2500 руб.</div>
-                        </div>
-                        <div class="text-2">Не так уж и дорого!</div>
-                        <div class="content-description">
-                            <h3>МЫ САМЫЕ АХУЕННЫЕ</h3>
-                        </div>
-                        <div class="content-button">
-                            <button>Подключить</button>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="plans-cell">
-                        <h3>УранНч</h3>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/internet.png"></div>
-                            <div class="text-1">100 Мбит/с</div>
-                        </div>
-                        <div class="text-2">Безлимитный интернет</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/price.png" alt=""></div>
-                            <div class="text-1">500 руб/мес</div>
-                        </div>
-                        <div class="text-2">Отличный вариант!</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/back-in-time.png" alt=""></div>
-                            <div class="text-1">12 месяцев</div>
-                        </div>
-                        <div class="text-2">Надолго хватит!</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite.png" alt=""></div>
-                            <div class="text-1">Буран (М1)</div>
-                        </div>
-                        <div class="text-2">Наша разработка</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite-eqp.png" alt=""></div>
-                            <div class="text-1">2500 руб.</div>
-                        </div>
-                        <div class="text-2">Не так уж и дорого!</div>
-                        <div class="content-description">
-                            <h3>Отличный тариф!</h3>
-                        </div>
-                        <div class="content-button">
-                            <button>Подключить</button>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="plans-cell">
-                        <h3>УранНч</h3>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/internet.png"></div>
-                            <div class="text-1">100 Мбит/с</div>
-                        </div>
-                        <div class="text-2">Безлимитный интернет</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/price.png" alt=""></div>
-                            <div class="text-1">500 руб/мес</div>
-                        </div>
-                        <div class="text-2">Отличный вариант!</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/back-in-time.png" alt=""></div>
-                            <div class="text-1">12 месяцев</div>
-                        </div>
-                        <div class="text-2">Надолго хватит!</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite.png" alt=""></div>
-                            <div class="text-1">Буран (М1)</div>
-                        </div>
-                        <div class="text-2">Наша разработка</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite-eqp.png" alt=""></div>
-                            <div class="text-1">2500 руб.</div>
-                        </div>
-                        <div class="text-2">Не так уж и дорого!</div>
-                        <div class="content-description">
-                            <h3>МЫ САМЫЕ АХУЕННЫЕ</h3>
-                        </div>
-                        <div class="content-button">
-                            <button>Подключить</button>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="plans-cell">
-                        <h3>УранНч</h3>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/internet.png"></div>
-                            <div class="text-1">100 Мбит/с</div>
-                        </div>
-                        <div class="text-2">Безлимитный интернет</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/price.png" alt=""></div>
-                            <div class="text-1">500 руб/мес</div>
-                        </div>
-                        <div class="text-2">Отличный вариант!</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/back-in-time.png" alt=""></div>
-                            <div class="text-1">12 месяцев</div>
-                        </div>
-                        <div class="text-2">Надолго хватит!</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite.png" alt=""></div>
-                            <div class="text-1">Буран (М1)</div>
-                        </div>
-                        <div class="text-2">Наша разработка</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite-eqp.png" alt=""></div>
-                            <div class="text-1">2500 руб.</div>
-                        </div>
-                        <div class="text-2">Не так уж и дорого!</div>
-                        <div class="content-description">
-                            <h3>МЫ САМЫЕ АХУЕННЫЕ</h3>
-                        </div>
-                        <div class="content-button">
-                            <button>Подключить</button>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="plans-cell">
-                        <h3>УранНч</h3>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/internet.png"></div>
-                            <div class="text-1">100 Мбит/с</div>
-                        </div>
-                        <div class="text-2">Безлимитный интернет</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/price.png" alt=""></div>
-                            <div class="text-1">500 руб/мес</div>
-                        </div>
-                        <div class="text-2">Отличный вариант!</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/back-in-time.png" alt=""></div>
-                            <div class="text-1">12 месяцев</div>
-                        </div>
-                        <div class="text-2">Надолго хватит!</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite.png" alt=""></div>
-                            <div class="text-1">Буран (М1)</div>
-                        </div>
-                        <div class="text-2">Наша разработка</div>
-                        <div class="content-block">
-                            <div class="image"><img src="img/plans/satellite-eqp.png" alt=""></div>
-                            <div class="text-1">2500 руб.</div>
-                        </div>
-                        <div class="text-2">Не так уж и дорого!</div>
-                        <div class="content-description">
-                            <h3>МЫ САМЫЕ АХУЕННЫЕ</h3>
-                        </div>
-                        <div class="content-button">
-                            <button>Подключить</button>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
-    </section>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="text/javascript" src="plans.js"></script>
-</body>
+        {% endfor %}
+    </div>
+</section>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="{% static 'js/plans.js' %}"></script>
+{% endblock content%}
