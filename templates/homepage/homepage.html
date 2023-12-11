@@ -2,44 +2,46 @@
 {% load static %}
 {% block title %}Главная страница{% endblock title %}
 {% block content %}
-<section class="homepage">
-    <div class="text-box">
-        <a class="version" href=""><b>BETA</b></a>
-        <h1>Орбитальный интернет</h1>
-        <p>Новейшая технология связи, которая предоставляет быстрый доступ к сети Интернет из любой точки земного шара.</p>
-        <a class="choose-options" href="">Выбрать тариф</a>
-        <a class="choose-business" href="">Юр. лицам</a>
-    </div>
-    <div class="button_more">
-        <div class="button_more-text">
-            <a href="">Узнать больше</a>
+<section class="main">
+    <section class="homepage">
+        <div class="text-box">
+            <a class="version" href=""><b>BETA</b></a>
+            <h1>Орбитальный интернет</h1>
+            <p>Новейшая технология связи, которая предоставляет быстрый доступ к сети Интернет из любой точки земного шара.</p>
+            <a class="choose-options" href="">Выбрать тариф</a>
+            <a class="choose-business" href="">Юр. лицам</a>
         </div>
-        <div class="button_more-png">
-            <a href=""><img src={% static "img/button_more-png.png" %} alt=""></a>
+        <div class="button_more">
+            <div class="button_more-text">
+                <a href="">Узнать больше</a>
+            </div>
+            <div class="button_more-png">
+                <a href=""><img src={% static "img/button_more-png.png" %} alt=""></a>
+            </div>
         </div>
-    </div>
-</section>
-<section class="description">
-    <div class="desc-box">
-        <h2>Быстро. Доступно. Удобно.</h2>
-        <div class="desc-page">
-            <div class="desc_item">
-                <img src={% static "img/desc_1.png" %} alt="">
-                <h2>"Для покорителей вершин мир никогда не был так близок. 
-                     Наша инновационная технология связи гарантирует 
-                     стабильный и высокоскоростной доступ к Интернету в самых удаленных 
-                     и труднопроходимых местах."
-                </h2>
-            </div>
-            <div class="desc_item">
-                <img src={% static "img/desc_2.png" %} alt="">
-                <h2>"Путешествия в неизведанные сердца континентов становятся проще с орбитальным 
-                    интернетом. Где бы вы ни находились — в сердце Амазонки, на бескрайних 
-                    просторах Сибири или в затерянных районах Африканского саванны — 
-                    высокоскоростная связь всегда с вами."
-                </h2>
-            </div>
-        </div> 
-    </div>
+    </section>
+    <section class="description">
+        <div class="desc-box">
+            <h2>Быстро. Доступно. Удобно.</h2>
+            <div class="desc-page">
+                <div class="desc_item">
+                    <img src={% static "img/desc_1.png" %} alt="">
+                    <h2>"Для покорителей вершин мир никогда не был так близок. 
+                         Наша инновационная технология связи гарантирует 
+                         стабильный и высокоскоростной доступ к Интернету в самых удаленных 
+                         и труднопроходимых местах."
+                    </h2>
+                </div>
+                <div class="desc_item">
+                    <img src={% static "img/desc_2.png" %} alt="">
+                    <h2>"Путешествия в неизведанные сердца континентов становятся проще с орбитальным 
+                        интернетом. Где бы вы ни находились — в сердце Амазонки, на бескрайних 
+                        просторах Сибири или в затерянных районах Африканского саванны — 
+                        высокоскоростная связь всегда с вами."
+                    </h2>
+                </div>
+            </div> 
+        </div>
+    </section>
 </section>
 {% endblock content %}

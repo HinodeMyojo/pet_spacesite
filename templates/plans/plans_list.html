@@ -1,0 +1,9 @@
+<h1>Тарифы</h1>
+<ul>
+{% for plan in plans_list %}
+    <li>{{ plan.title }} - {{ plan.price }}</li>
+    <a href="{% url "plans:plans-detail" plan.id %}">Взглянуть внимательнее</a>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>

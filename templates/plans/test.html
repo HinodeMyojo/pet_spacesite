@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Тарифы{% endblock title %}
+{% block content %}
+<section class="plans">
+    <div class="plans-container">
+        <h2>Выберите тарифный план</h2>
+        <div class="plans-box">
+            {% for plan in plan_list %}
+            <div class="plans-box-pricing">
+                <div>
+                    <div class="plans-cell">
+                        <h3>{{ plan.title }}</h3>
+                        <div class="content-block">
+                            <div class="image"><img src="{% static 'img/plans/internet.png' %}"></div>
+                            <div class="text-1">{{ plan.speed }}</div>
+                        <div class="text-2">Безлимитный интернет</div>
+                        <div class="content-block">
+                            <div class="image"><img src="{% static 'img/plans/price.png' %}" alt=""></div>
+                            <div class="text-1">{{ plan.price }}</div>
+                        </div>
+                        <div class="text-2">Отличный вариант!</div>
+                        <div class="content-block">
+                            <div class="image"><img src="{% static 'img/plans/back-in-time.png' %}" alt=""></div>
+                            <div class="text-1">{{ plan.period }}</div>
+                        </div>
+                        <div class="text-2">Надолго хватит!</div>
+                        <div class="content-block">
+                            <div class="image"><img src="{% static 'img/plans/satellite.png' %}" alt=""></div>
+                            <div class="text-1">{{ plan.equipment }}</div>
+                        </div>
+                        <div class="text-2">Наша разработка</div>
+                        <div class="content-block">
+                            <div class="image"><img src="{% static 'img/plans/satellite-eqp.png' %}" alt=""></div>
+                            <div class="text-1">{{ plan.option }}</div>
+                        </div>
+                        <div class="text-2">Не так уж и дорого!</div>
+                        <div class="content-description">
+                            <h3>Просто описание</h3>
+                        </div>
+                        <div class="content-button">
+                            <button>Подключить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="{% static 'js/plans.js' %}"></script>
+{% endblock content%}

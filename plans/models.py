@@ -40,6 +40,7 @@ class PlansEquipment(BaseModel):
         verbose_name_plural = 'Устанавливаемое оборудование'
     def __str__(self):
         return self.equipment
+    
 class PlansPeriod(BaseModel):
     """Период подписки"""
     period = models.IntegerField(verbose_name='Период подписки')
@@ -58,7 +59,7 @@ class PlansSpeed(BaseModel):
     def __str__(self):
         return str(self.speed)
 
-class PlansTitleSpeed(BaseModel):
+class Plans(BaseModel):
     """Описание тарифов
 
     title: название тарифа
