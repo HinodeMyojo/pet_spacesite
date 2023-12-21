@@ -411,3 +411,85 @@
 .plans-cell:last-child {
     margin-bottom: 0;
 }
+
+.container {
+  display: flex;
+  justify-content: center; /* или space-between, в зависимости от желаемого отступа */
+  align-items: center;
+  margin-top: 200px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px 0px; /* Изменил верхний отступ для лучшего центрирования на экране */
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Рамка вокруг формы */
+}
+
+.image-container {
+  flex: 1; /* Flexbox для контейнера изображения */
+  max-width: 400px; /* Можно настроить в зависимости от размера изображения */
+  padding: 20px; /* Отступ вокруг картинки */
+}   
+
+.image-container img {
+  width: 100%; /* Заставляет изображение заполнить контейнер */
+  height: auto; /* Сохраняет пропорции изображения */
+  border-radius: 8px; /* Добавляет скругленные углы, если нужно */
+}
+  
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5f9ea0;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #528f8b;
+}
+
+.switch-to-register {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.switch-to-register a {
+  color: #5f9ea0;
+  text-decoration: none;
+}
+
+.switch-to-register a:hover {
+  text-decoration: underline;
+}
