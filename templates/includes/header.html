@@ -13,7 +13,13 @@
         </div>
         <div class="authorization-form">
             <ul>
-                <li><a href="">Личный кабинет</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Выйти</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Вход</a></li>
+                <li><a href="{% url 'registration' %}">Регистрация</a></li>
+                {% endif %}
+                
             </ul>
         </div>
     </nav>

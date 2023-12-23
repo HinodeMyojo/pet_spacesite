@@ -12,6 +12,11 @@
     width: 100%;
 }
 
+.body{
+    background-image: url(../img//background-second.png);
+    background-size: cover;
+}
+
 .nav{
     display: flex;
     padding: 0.3% 10%;
@@ -411,3 +416,88 @@
 .plans-cell:last-child {
     margin-bottom: 0;
 }
+
+/* Форма аутентификаций_Начало */
+
+.container {
+    display: flex; /* Используем flexbox, чтобы расположить дочерние контейнеры */
+    justify-content: space-between; /* Распределить пространство между дочерними контейнерами */
+    width: 900px;
+    height: 600px;
+    align-items: stretch; /* Растянуть дочерние элементы до полной высоты контейнера */
+    margin: 200px auto 0; /* Отступ сверху 200px, горизонтально - авто (центрирует блок) */
+    border-radius: 50px;
+    background: rgb(18,18,18);
+background: linear-gradient(270deg, rgba(18,18,18,1) 0%, rgba(50,50,50,1) 100%);    
+    color: #ddd;
+    
+}
+
+.login-container, .image-container {
+    width: 50%; /* Каждый блок будет занимать 50% ширины родительского элемента */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%; /* Устанавливаем ширину и высоту img равными 100% размера .image-container */
+    object-fit: cover; /* Это свойство масштабирует изображение, чтобы оно заполнило доступный объем */
+  }
+
+.login-form h2 {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5f9ea0;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #528f8b;
+}
+
+.switch-to-register {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.switch-to-register a {
+  color: #5f9ea0;
+  text-decoration: none;
+}
+
+.switch-to-register a:hover {
+  text-decoration: underline;
+}
+
+/* Форма аутентификаций_Конец */

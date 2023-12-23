@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
+    
 }
 .header {
     background-color: #000;
@@ -10,6 +11,11 @@
     top: 0;
     z-index: 100;
     width: 100%;
+}
+
+.body{
+    background-image: url(img//background-second.png);
+    background-size: cover;
 }
 
 .nav{
@@ -93,6 +99,10 @@
     background-size: cover;
     position: relative;
     overflow: hidden;
+}
+
+.main-description{
+    background-color: #fff;
 }
 
 .text-box{
@@ -227,7 +237,8 @@
   }
 
   .desc-box {
-    margin: 3%;
+    padding: 3%;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -300,7 +311,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    background-image: url(img/background-second.png);
     background-size: cover;
 }
 
@@ -412,39 +422,40 @@
     margin-bottom: 0;
 }
 
+/* Форма аутентификаций_Начало */
+
 .container {
-  display: flex;
-  justify-content: center; /* или space-between, в зависимости от желаемого отступа */
-  align-items: center;
-  margin-top: 200px;
+    display: flex; /* Используем flexbox, чтобы расположить дочерние контейнеры */
+    justify-content: space-between; /* Распределить пространство между дочерними контейнерами */
+    width: 900px;
+    height: 600px;
+    align-items: stretch; /* Растянуть дочерние элементы до полной высоты контейнера */
+    margin: 200px auto 0; /* Отступ сверху 200px, горизонтально - авто (центрирует блок) */
+    border-radius: 50px;
+    background: rgb(18,18,18);
+background: linear-gradient(270deg, rgba(18,18,18,1) 0%, rgba(50,50,50,1) 100%);    
+    color: #ddd;
+    
 }
 
-.login-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 100px 0px; /* Изменил верхний отступ для лучшего центрирования на экране */
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    border: 1px solid #ddd; /* Рамка вокруг формы */
+.login-container, .image-container {
+    width: 50%; /* Каждый блок будет занимать 50% ширины родительского элемента */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-
-.image-container {
-  flex: 1; /* Flexbox для контейнера изображения */
-  max-width: 400px; /* Можно настроить в зависимости от размера изображения */
-  padding: 20px; /* Отступ вокруг картинки */
-}   
 
 .image-container img {
-  width: 100%; /* Заставляет изображение заполнить контейнер */
-  height: auto; /* Сохраняет пропорции изображения */
-  border-radius: 8px; /* Добавляет скругленные углы, если нужно */
-}
-  
+    width: 100%;
+    height: 100%; /* Устанавливаем ширину и высоту img равными 100% размера .image-container */
+    object-fit: cover; /* Это свойство масштабирует изображение, чтобы оно заполнило доступный объем */
+  }
+
 .login-form h2 {
-  text-align: center;
-  margin-bottom: 45px;
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 30px;
 }
 
 .input-group {
@@ -454,7 +465,7 @@
 
 .input-group label {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .input-group input {
@@ -493,3 +504,5 @@ button:hover {
 .switch-to-register a:hover {
   text-decoration: underline;
 }
+
+/* Форма аутентификаций_Конец */
