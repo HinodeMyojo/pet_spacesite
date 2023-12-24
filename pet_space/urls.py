@@ -28,6 +28,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/registration/', views.RegistrationView.as_view(
     ), name='registration'),
+    path('accounts/profile/', include('personal.urls', namespace='personal')),
     path("__debug__/", include("debug_toolbar.urls")),
 ]
 

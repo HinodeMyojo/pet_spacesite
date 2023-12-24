@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Главная страница{% endblock title %}
+{% block content %}
+<div class="profile-container">
+    <div class="avatar-section">
+        <img src="img/a_gtl.jpg" alt="Профиль пользователя" class="avatar-image">
+        <button class="btn remove-avatar">Удалить аватар</button>
+        <input type="file" id="avatar-upload" class="avatar-upload" hidden>
+        <label for="avatar-upload" class="btn select-avatar">Выбрать аватар</label>
+    </div>
+    <div class="login-info">
+        <h1>{{ user.usename }}</h1>
+        <h3>Муж.</h3>
+        <h3>21 год</h3>
+        <h3>На сайте с: 2019г</h3>
+    </div>
+    <div class="tariff-info">
+        <h1>Информация о тарифе</h1>
+        <h3>Название тарифа: Галактический</h3>
+        <h3>Скорость передачи данных: 100 Гбит/с</h3>
+        <h3>Цена: 1500 кредитов в месяц</h3>
+        <h3>Статус: Активен</h3>
+    </div>
+</div>
+{% endblock content %}

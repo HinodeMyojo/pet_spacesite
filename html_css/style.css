@@ -506,3 +506,86 @@ button:hover {
 }
 
 /* Форма аутентификаций_Конец */
+
+/* Профиль пользователя */
+.profile-container {
+    display: flex;
+    align-items: flex-start; /* Исправлено с 'self-start' на 'flex-start' */
+    margin: 150px;
+    padding: 20px; /* Исправлена опечатка в стиле 'padding' */
+    gap: 20px;
+    color: white;
+}
+
+/* Обобщенные стили для заголовков */
+.profile-container h1 {
+    font-size: 20px;
+    margin-top: 0; /* Убрано свойство 'margin-top' из '.tariff-info h1' */
+}
+
+.profile-container h3 {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+/* Стили для секции аватара */
+.avatar-section {
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-image {
+    border-radius: 10%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Стили для кнопок */
+.btn, .avatar-section label { /* Добавили label к декларации, чтобы применить к нему радиус границы */
+    border: none;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Нет необходимости повторять, если такой же стиль уже задан для .btn */
+    border-radius: 4px; /* Стиль для label теперь здесь */
+}
+
+/* Стили для состояния наведения курсора */
+.btn:hover, .remove-avatar:hover, .select-avatar:hover {
+    background-color: #751c1c; /* Установили один общий стиль наведения */
+}
+
+/* Специфические цвета для разных кнопок */
+.remove-avatar {
+    background-color: #d9534f;
+}
+
+.select-avatar {
+    background-color: #58b158;
+}
+
+/* Более темный цвет зеленой кнопки при наведении */
+.select-avatar:hover {
+    background-color: #285e28; /* Теперь только одно изменение для лучшей читаемости */
+}
+
+/* Стили для информации о тарифе */
+.tariff-info {
+    flex-grow: 1;
+}
+
+/* Параграфы внутри информации о тарифе */
+.tariff-info p {
+    padding: 10px;
+}
+/* Профиль пользователя конец */

@@ -1,5 +1,14 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-  <h2>Вы вышли из системы!</h2>
+<div class="container">
+  <div class="login-container">
+    <form method="post" class="login-form">
+      <h2>Вы вышли из аккаунта!</h2>
+    </form>
+  </div>
+  <div class="image-container">
+      <img src="{% static "img/logged_out.jpg" %}" alt="Login Visual Representation">
+  </div>
+</div>
 {% endblock %}

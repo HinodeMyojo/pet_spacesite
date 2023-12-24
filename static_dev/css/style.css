@@ -278,7 +278,7 @@
   }
 
 .footer{
-    background-color: #000;
+    background-color: #00000060;
 }
 
 .foot-links {
@@ -425,7 +425,7 @@
     width: 900px;
     height: 600px;
     align-items: stretch; /* Растянуть дочерние элементы до полной высоты контейнера */
-    margin: 200px auto 0; /* Отступ сверху 200px, горизонтально - авто (центрирует блок) */
+    margin: 200px auto 100px; /* Отступ сверху 200px, горизонтально - авто (центрирует блок) */
     border-radius: 50px;
     background: rgb(18,18,18);
 background: linear-gradient(270deg, rgba(18,18,18,1) 0%, rgba(50,50,50,1) 100%);    
@@ -445,59 +445,165 @@ background: linear-gradient(270deg, rgba(18,18,18,1) 0%, rgba(50,50,50,1) 100%);
     width: 100%;
     height: 100%; /* Устанавливаем ширину и высоту img равными 100% размера .image-container */
     object-fit: cover; /* Это свойство масштабирует изображение, чтобы оно заполнило доступный объем */
-  }
-
-.login-form h2 {
-  text-align: left;
-  margin-bottom: 30px;
-  font-size: 30px;
 }
 
-.input-group {
-  margin-bottom: 15px;
-  margin-right: 15px;
+.login-form h2 {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.login-form p {
+    margin-bottom: 15px;
+}
+
+.login-form p label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login-form p input{
+    width: 300px;
+    height:40px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-form ul{
+    width: 300px;
+    height: 20px;
+    margin-bottom: 70px;
+    color: rgb(255, 91, 62);
+}
+/* .input-group {
+    margin-bottom: 15px;
+    margin-right: 15px;
 }
 
 .input-group label {
-  display: block;
-  margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .input-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+} */
 
 button {
-  width: 100%;
-  padding: 10px;
-  background-color: #5f9ea0;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    width: 100%;
+    padding: 10px;
+    background-color: #5f9ea0;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #528f8b;
+    background-color: #528f8b;
 }
 
 .switch-to-register {
-  text-align: center;
-  margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .switch-to-register a {
-  color: #5f9ea0;
-  text-decoration: none;
+    color: #5f9ea0;
+    text-decoration: none;
 }
 
 .switch-to-register a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Форма аутентификаций_Конец */
+
+/* Профиль пользователя */
+.profile-container {
+    display: flex;
+    align-items: flex-start; /* Исправлено с 'self-start' на 'flex-start' */
+    margin: 150px;
+    padding: 20px; /* Исправлена опечатка в стиле 'padding' */
+    gap: 20px;
+    color: white;
+}
+
+/* Обобщенные стили для заголовков */
+.profile-container h1 {
+    font-size: 20px;
+    margin-top: 0; /* Убрано свойство 'margin-top' из '.tariff-info h1' */
+}
+
+.profile-container h3 {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+/* Стили для секции аватара */
+.avatar-section {
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-image {
+    border-radius: 10%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Стили для кнопок */
+.btn, .avatar-section label { /* Добавили label к декларации, чтобы применить к нему радиус границы */
+    border: none;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Нет необходимости повторять, если такой же стиль уже задан для .btn */
+    border-radius: 4px; /* Стиль для label теперь здесь */
+}
+
+/* Стили для состояния наведения курсора */
+.btn:hover, .remove-avatar:hover, .select-avatar:hover {
+    background-color: #751c1c; /* Установили один общий стиль наведения */
+}
+
+/* Специфические цвета для разных кнопок */
+.remove-avatar {
+    background-color: #d9534f;
+}
+
+.select-avatar {
+    background-color: #58b158;
+}
+
+/* Более темный цвет зеленой кнопки при наведении */
+.select-avatar:hover {
+    background-color: #285e28; /* Теперь только одно изменение для лучшей читаемости */
+}
+
+/* Стили для информации о тарифе */
+.tariff-info {
+    flex-grow: 1;
+}
+
+/* Параграфы внутри информации о тарифе */
+.tariff-info p {
+    padding: 10px;
+}
+/* Профиль пользователя конец */
