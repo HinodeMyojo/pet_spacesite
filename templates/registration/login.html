@@ -10,7 +10,7 @@
         {{ form.as_p }}
         <button type="submit">Войти</button>
         <div class="switch-to-register">
-          Нет аккаунта? <a href="/register">Зарегистрируйтесь!</a>
+          Нет аккаунта? <a href={% url 'registration' %}>Зарегистрируйтесь!</a>
         </div>
         <div class="switch-to-register">
           Забыли пароль? <a href={% url 'password_reset' %}>Восстановить пароль</a>

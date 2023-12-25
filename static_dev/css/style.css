@@ -277,10 +277,15 @@
     margin-top: 10px; /* добавляем небольшой отступ сверху */
   }
 
-.footer{
+.footer {
     background-color: #00000060;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
 }
-
 .foot-links {
     display: flex;
     padding: 0.5% 10%;
@@ -423,9 +428,9 @@
     display: flex; /* Используем flexbox, чтобы расположить дочерние контейнеры */
     justify-content: space-between; /* Распределить пространство между дочерними контейнерами */
     width: 900px;
-    height: 600px;
+    height: 650px;
     align-items: stretch; /* Растянуть дочерние элементы до полной высоты контейнера */
-    margin: 200px auto 100px; /* Отступ сверху 200px, горизонтально - авто (центрирует блок) */
+    margin: 150px auto 100px; /* Отступ сверху 200px, горизонтально - авто (центрирует блок) */
     border-radius: 50px;
     background: rgb(18,18,18);
 background: linear-gradient(270deg, rgba(18,18,18,1) 0%, rgba(50,50,50,1) 100%);    
@@ -470,7 +475,7 @@ background: linear-gradient(270deg, rgba(18,18,18,1) 0%, rgba(50,50,50,1) 100%);
 }
 
 
-.login-form p input{
+.login-form p input {
     width: 300px;
     height: 40px;
     padding: 10px;
@@ -480,9 +485,9 @@ background: linear-gradient(270deg, rgba(18,18,18,1) 0%, rgba(50,50,50,1) 100%);
 
 .login-form ul{
     width: 300px;
-    height: 20px;
-    margin-bottom: 70px;
+    height: auto;
     color: rgb(255, 91, 62);
+    font-size: 12px;
 }
 
 .login-form button{
@@ -622,3 +627,4 @@ button:hover {
     padding: 10px;
 }
 /* Профиль пользователя конец */
+

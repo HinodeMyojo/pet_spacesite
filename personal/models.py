@@ -12,7 +12,7 @@ class CustomUser(AbstractUser):
         (SHREK, 'Шрек'),
     ]
     sex = models.CharField(
-        'Пол',  
+        'Пол',
         max_length=5,
         choices=SEXS,
         default=SHREK,
@@ -22,6 +22,6 @@ class CustomUser(AbstractUser):
         'Аватар',
         blank=True,
         null=True,
-        upload_to='avatars/', # Изменено на upload_to с путем к папке 'avatars/'
+        upload_to='avatars/',# Изменено на upload_to с путем к папке 'avatars/'
         default='defaults/default-avatar.jpg',
     )
