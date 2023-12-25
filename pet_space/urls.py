@@ -30,6 +30,7 @@ urlpatterns = [
     ), name='registration'),
     path('accounts/profile/', include('personal.urls', namespace='personal')),
     path("__debug__/", include("debug_toolbar.urls")),
+    path('news/', include('news.urls', namespace='news')),
 ]
 
 

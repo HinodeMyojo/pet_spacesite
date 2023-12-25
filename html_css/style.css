@@ -589,3 +589,64 @@ button:hover {
     padding: 10px;
 }
 /* Профиль пользователя конец */
+
+
+.container-news {
+    min-height: 100vh; /* Минимальная высота контейнера равна высоте экрана */
+    overflow: hidden;
+    background-color: #222222c4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем контейнер по вертикали */
+
+}
+
+.news-item {
+    width: 650px;
+    background: #474747;
+    margin: 10px auto; /* Верхний и нижний отступы */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item img {
+    width: 100%;          /* Ширина изображения равна 100% ширины блока-родителя */
+    height: auto;         /* Высота автоматически изменяется для сохранения пропорций */
+    object-fit: cover;    /* Изображение покрывает всю область блока, сохраняя свои пропорции */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: block;       /* Убрать любые внешние отступы по умолчанию */
+    border-radius: inherit;/* Унаследовать скругление углов от блока, если это необходимо */
+
+}
+
+.news-author-container{
+    width: 100px;
+    height: 30px;
+}
+
+.news-title {
+    margin: 0;
+    padding: 0;
+    color: #d4d4d4;
+}
+
+.news-content {
+    color: #bbbbbb;
+}
+
+.news-date {
+    color: #8f8f8f;
+    font-size: 0.9em;
+}
+
+/* Чтобы контент не прилипал к верхней части страницы: */
+.news-item:first-child {
+    margin-top: 10ch;
+}
+
+/* Чтобы контент не прилипал к нижней части страницы: */
+.news-item:last-child {
+    margin-bottom: auto;
+}

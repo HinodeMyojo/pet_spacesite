@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    {% for news in news_list  %}
+    <section class="container-news">
+        <div class="news-item">
+            <div class="news-author-container">
+                <div class="news-author-img">
+                    <img src={{ news.author.avatar.url }} alt="Профиль пользователя" class="avatar-image">
+                </div>
+                <div class="news-author-category-date">
+                    <div class="news-author-username">
+                        <p>{{ news.author.username }}</p>
+                    </div>
+                    <div class="news-category-date">
+                        <p>{{ news.category }}</p>
+                        <p>&nbsp;</p> 
+                        <p>{{ news.created_at }}</p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="news-title">{{ news.title }}</h2>
+            <p class="news-date">{{ news.created_at }}</p>
+            {% if news.modified_at %}
+            <p class="news-date">{{ news.modified_at }}</p>
+            {% endif %}
+            <p class="news-content">
+                {{ news.text }}
+            </p>
+            <img src={{ news.image.url }} alt="">
+            <p>Оставить комментарий</p>
+        </div>
+        <!-- More news items here -->
+    </section>
+    {% endfor %}
+{% endblock %}
