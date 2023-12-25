@@ -4,13 +4,13 @@
 {% block content %}
 <div class="profile-container">
     <div class="avatar-section">
-        <img src="img/a_gtl.jpg" alt="Профиль пользователя" class="avatar-image">
+        <img src={{ user.avatar.url  }} alt="Профиль пользователя" class="avatar-image">
         <button class="btn remove-avatar">Удалить аватар</button>
         <input type="file" id="avatar-upload" class="avatar-upload" hidden>
         <label for="avatar-upload" class="btn select-avatar">Выбрать аватар</label>
     </div>
     <div class="login-info">
-        <h1>{{ user.usename }}</h1>
+        <h1>{{ user.username }}</h1>
         <h3>Муж.</h3>
         <h3>21 год</h3>
         <h3>На сайте с: 2019г</h3>

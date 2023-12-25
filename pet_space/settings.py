@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'personal.apps.PersonalConfig',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,8 @@ INTERNAL_IPS = [
 ]
 
 LOGIN_REDIRECT_URL = '/'
+
+AUTH_USER_MODEL = 'personal.CustomUser'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
