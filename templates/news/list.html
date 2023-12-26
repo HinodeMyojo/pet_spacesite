@@ -19,16 +19,27 @@
                     </div>
                 </div>
             </div>
-            <h2 class="news-title">{{ news.title }}</h2>
-            <p class="news-date">{{ news.created_at }}</p>
-            {% if news.modified_at %}
-            <p class="news-date">{{ news.modified_at }}</p>
-            {% endif %}
-            <p class="news-content">
-                {{ news.text }}
-            </p>
-            <img src={{ news.image.url }} alt="">
-            <p>Оставить комментарий</p>
+            <div class="news-text-container">
+                <h2 class="news-title">{{ news.title }}</h2>
+                <p class="news-content">
+                    {{ news.text|truncatewords:20 }}
+                <img src={{ news.image.url }} alt="">
+            </div>
+            <div class="news-reaction-container">
+                <div class="news-like-container">
+                    <button class="news-like-button">
+                        <div class="news-like-icon">
+                            <img src="{% static "ico/like_0.png" %}" alt="">
+                        </div>
+                        <span class="news-like-counter">
+                            
+                        </span>
+                    </button>
+                </div>
+                <div class="news-comment-container">
+                    <button class="news-comment-button"></button>
+                </div>
+            </div>
         </div>
         <!-- More news items here -->
     </section>

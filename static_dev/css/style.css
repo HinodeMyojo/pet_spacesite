@@ -643,6 +643,8 @@ button:hover {
 .news-item {
     width: 650px;
     background: #474747;
+    display: flex;
+    flex-direction: column;
     margin: 10px auto; /* Верхний и нижний отступы */
     padding: 20px;
     border-radius: 10px;
@@ -665,18 +667,23 @@ button:hover {
     width: 80%;
     height: 70px;
     align-items: flex-end;
+    color: white;
 }
 
 .news-author-container p{
-    font-size: 17px;
+    font-size: 15px;
+}
+
+.news-text-container{
+    display: flex;
+    flex-direction: column;
 }
 
 .news-author-img img{
     border-radius: 50%;
-    height: 65px;
-    width: 65px;
-    align-self: flex-end; /* Выравнивание изображения по нижнему краю */
-    margin-bottom: 0;
+    height: 55px;
+    width: 55px;
+    margin-bottom: 10px;
 }
 
 .news-author-category-date{
@@ -698,6 +705,11 @@ button:hover {
 
 .news-content {
     color: #bbbbbb;
+}
+
+.news-content img{
+    width: 100%;
+    height: 30%;
 }
 
 .news-date {

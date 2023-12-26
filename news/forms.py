@@ -10,6 +10,7 @@ BAD_WORDS = (
 
 WARNING = 'Мат на платформе запрещен.'
 
+
 class CommentForm(ModelForm):
 
     class Meta:

@@ -2,6 +2,9 @@ from django.db import models
 from datetime import datetime
 
 from django.conf import settings
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class Category(models.Model):
     """Represents a category."""
@@ -29,11 +32,12 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+
 class News(models.Model):
     title = models.CharField(max_length=128, verbose_name='Название новости')
     text = models.CharField(max_length=5000, verbose_name='Текст новости')
     created_at = models.DateTimeField(auto_now_add=True)
-    modified_at = models.DateTimeField(auto_now_add=False, auto_now=True)
+    modified_at = models.DateTimeField(null=True, blank=True, auto_now=True)
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -54,7 +58,8 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+
 class Comment(models.Model):
     news = models.ForeignKey(
         News,
@@ -72,3 +77,29 @@ class Comment(models.Model):
         ordering=('created_at',)
         verbose_name_plural = 'Комментарии'
         verbose_name = 'Комментарий'
+
+
+class Like(models.Model):
+    news = models.ForeignKey(
+        News,
+        verbose_name='Новость',
+        on_delete=models.CASCADE,
+        related_name='likes'
+    )
+    author = models.ForeignKey(
+        User,
+        verbose_name='Лайк',
+        on_delete=models.CASCADE,
+        related_name='likes'
+    )
+
+    class Meta:
+        verbose_name_plural = 'Лайк'
+        verbose_name = 'Лайки'
+        constraints = [
+            models.UniqueConstraint(fields=['news',
+            'author'], name='unique_like')
+        ]
+
+    def __str__(self):
+        return f'{self.author} любит {self.news}'
