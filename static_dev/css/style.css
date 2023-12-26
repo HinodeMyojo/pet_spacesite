@@ -11,14 +11,10 @@
     z-index: 100;
     width: 100%;
 }
-
-
-
 .body{
     background-image: url(../img//background-second.png);
     background-size: cover;
 }
-
 .nav{
     display: flex;
     padding: 0.3% 10%;
@@ -34,20 +30,17 @@
     flex: 1;
     text-align: center;
 }
-
 .nav-links ul li{
     list-style: none;
     display: inline-block;
     padding: 8px 35px;
     position: relative;
 }
-
 .nav-links ul li a{
     color: #e2e2e2;
     text-decoration: none;
     font-size: 16px;
 }
-
 /* Подчеркивание текста */
 .nav-links ul li::after{
     content: '';
@@ -58,22 +51,18 @@
     margin: auto;
     transition: 0.5s;
 }
-
 .nav-links ul li:hover::after{
     width: 100%;
 }
-
 .authorization-form{
     text-align: right;
 }
-
 .authorization-form ul li{
     list-style: none;
     display: inline-block;
     padding: 8px 15px;
     position: relative;
 }
-
 .authorization-form ul li a{
     color: #ffffff;
     text-decoration: none;
@@ -84,14 +73,12 @@
     position: relative;
     font-weight: 600;
 }
-
 .authorization-form ul li a:hover{
     border-radius: 100px;
     background: #0828407a;
     transition: 0.4s;
     color: #09cff8;
 }
-
 .homepage{
     min-height: 100vh;
     width: 100%;
@@ -101,7 +88,6 @@
     position: relative;
     overflow: hidden;
 }
-
 .text-box{
     float: left;
     margin: 15% 0% 10% 10%;
@@ -110,19 +96,16 @@
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter:drop-shadow(5px 5px 5px #222);
 }
-
 .text-box h1{
     font-size: 60px;
     letter-spacing: 3px;
     font-weight: bold;
 }
-
 .text-box p{
     margin: 20px 0 40px;
     font-size: 20px;
     color: #e2e2e2;
 }
-
 .choose-options{
     font-weight: bold;
     display: inline-block;
@@ -133,9 +116,7 @@
     padding: 12px 34px;
     background: transparent;
     position: relative;
-
 }
-
 .choose-options:hover{
     border: 1px solid #0e4671;
     border-radius: 100px;
@@ -143,7 +124,6 @@
     transition: 0.4s;
     color: #09cff8;
 }
-
 .choose-business{
     display: inline-block;
     color: #fff;
@@ -160,7 +140,6 @@
     transition: 0.4s;
     color: #09cff8;
 }
-
 .button_more {
     display: flex;
     flex-direction: column;
@@ -169,12 +148,15 @@
     color: #fff;
     gap: 30px;
     filter: drop-shadow(5px 5px 5px #222);
-    position:absolute; /* Зафиксированное позиционирование относительно вьюпорта */
-    bottom: 0; /* Расположение в самом низу окна браузера */
-    left: 50%; /* Центрирование по горизонтали */
-    transform: translateX(-50%); Сдвигаем элемент на половину его ширины влево
+    position:absolute;
+   /* Зафиксированное позиционирование относительно вьюпорта */
+    bottom: 0;
+   /* Расположение в самом низу окна браузера */
+    left: 50%;
+   /* Центрирование по горизонтали */
+    transform: translateX(-50%);
+    Сдвигаем элемент на половину его ширины влево 
 }
-
 .button_more-text a{
     font-weight: bold;
     border: 1px solid #fff;
@@ -183,33 +165,34 @@
     color: #fff;
     text-decoration: none;
 }
-
 @keyframes button_png {
     0%, 100% {
         opacity: 1;
-        transform: translateX(0); /* Возвращение в исходное положение */
-      }
-      25%, 75% {
+        transform: translateX(0);
+       /* Возвращение в исходное положение */
+   }
+    25%, 75% {
         opacity: 0.5;
-        transform: translateX(-10px); /* Среднее положение вверх */
-      }
-      50% {
+        transform: translateX(-10px);
+       /* Среднее положение вверх */
+   }
+    50% {
         opacity: 0.1;
-        transform: translateX(-20px); /* Полное смещение вверх */
-      }
-    }
+        transform: translateX(-20px);
+       /* Полное смещение вверх */
+   }
+}
 .button_more-png img{
     width: 50px;
     filter: brightness(0) invert(1);
     rotate: 90deg;
     animation-name: button_png;
     animation-duration: 4s;
-    animation-timing-function: linear; /* Добавил плавность анимации */
-    animation-iteration-count: infinite; /* Анимация будет повторяться бесконечно */
+    animation-timing-function: linear;
+   /* Добавил плавность анимации */
+    animation-iteration-count: infinite;
+   /* Анимация будет повторяться бесконечно */
 }
-
-
-
 .version{
     display: inline-block;
     letter-spacing: 3px;
@@ -221,7 +204,6 @@
     background: #0828407a;
     position: relative;
 }
-
 .description {
     min-height: 100vh;
     width: 100%;
@@ -231,54 +213,55 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-  }
-
-  .desc-box {
+}
+.desc-box {
     margin: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .desc-box h2{
+}
+.desc-box h2{
     text-align: left;
     font-weight: inherit;
     font-size: 50px;
     line-height: 1.5;
-  }
-
-  .desc-page {
+}
+.desc-page {
     margin: 3% 8%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* расстояние между блоками desc_item */
-  }
-
-  .desc_item {
+    gap: 40px;
+   /* расстояние между блоками desc_item */
+}
+.desc_item {
     color: #222;
-    width: 620px; /* устанавливаем фиксированную ширину 100% */
-    height: 350px; /* устанавливаем фиксированную высоту 100% */
+    width: 620px;
+   /* устанавливаем фиксированную ширину 100% */
+    height: 350px;
+   /* устанавливаем фиксированную высоту 100% */
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .desc_item img {
-    margin: auto; /* применяем margin: auto; для центрирования изображений */
-    width: 100%; /* устанавливаем фиксированную ширину 100% */
-    height: 100%; /* устанавливаем фиксированную высоту 100% */
-    object-fit: cover; /* уменьшаем изображение, чтобы оно полностью заполнило контейнер */
+}
+.desc_item img {
+    margin: auto;
+   /* применяем margin: auto;
+    для центрирования изображений */
+    width: 100%;
+   /* устанавливаем фиксированную ширину 100% */
+    height: 100%;
+   /* устанавливаем фиксированную высоту 100% */
+    object-fit: cover;
+   /* уменьшаем изображение, чтобы оно полностью заполнило контейнер */
     border: transparent;
     border-radius: 40px 10px;
-
-  }
-
-  .desc_item h2 {
+}
+.desc_item h2 {
     font-size: 20px;
-    margin-top: 10px; /* добавляем небольшой отступ сверху */
-  }
-
+    margin-top: 10px;
+   /* добавляем небольшой отступ сверху */
+}
 .footer {
     background-color: #00000060;
     display: flex;
@@ -294,19 +277,16 @@
     justify-content: center;
     align-items: center;
 }
-
 .foot-links ul li{
     display: inline-block;
     padding: 8px 35px;
     position: relative;
 }
-
 .foot-links ul li a{
     color: #e2e2e2;
     text-decoration: none;
     font-size: 13px;
 }
-
 .plans{
     display: flex;
     flex-wrap: wrap;
@@ -315,93 +295,76 @@
     background-image: url(../img/background-second.png);
     background-size: cover;
 }
-
 .plans-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-
 }
-
 .plans-container h2{
     color: #fff;
     margin-bottom: 100px;
     font-size: 40px;
-
 }
-
 .plans-box {
     width: 100;
     display: flex;
     flex-direction: row;
-
-
 }
-
 .plans-box-pricing {
     min-width: 0px;
     max-width: 1250px;
     display: flex;
     flex-direction: row;
 }
-
 .plans-cell {
     margin: 2%;
     padding: 15px;
     border: 2px solid rgba(207, 207, 207, 0.432);
     border-radius: 10px;
-
 }
-
 .plans-cell h3{
     color: #fff;
     font-weight: normal;
     font-size: 25px;
     margin: 10px 0px 30px;
 }
-
 .content-block{
     display: flex;
     flex-direction: row;
     align-items: center;
     text-align: center;
 }
-
 .image img{
     filter: brightness(0) invert(1);
-    width: 25px; /* Замените на размер вашей картинки */
-    height: 25px; /* Замените на размер вашей картинки */
-
+    width: 25px;
+   /* Замените на размер вашей картинки */
+    height: 25px;
+   /* Замените на размер вашей картинки */
 }
-
 .text-1 {
     color: #fff;
     font-size: 100%;
     margin: 0px 5px 10px 10px;
 }
-
 .text-2 {
     font-size: 70%;
     margin: -10px 36px 20px;
-    color: #999; /* Цвет текста более светлый */
+    color: #999;
+   /* Цвет текста более светлый */
 }
-
 .content-button{
     display: flex;
     text-align: center;
     justify-content: center;
 }
-
 .content-description {
     margin:20px 0px -5px;
 }
-
 .content-description h3{
     font-size: 15px;
 }
-
 .content-button button{
     border: #fff 2px solid;
     color: #fff;
@@ -411,72 +374,64 @@
     height: 50px;
     width: 370px;
 }
-
 .content-button button:hover{
     background-color: #09d0f83d ;
     transition: 0.4s;
     color: #09cff8;
 }
-
-
-
 .plans-cell:last-child {
     margin-bottom: 0;
 }
-
 /* Форма аутентификаций_Начало */
-
 .container {
-    display: flex; /* Используем flexbox, чтобы расположить дочерние контейнеры */
-    justify-content: space-between; /* Распределить пространство между дочерними контейнерами */
+    display: flex;
+   /* Используем flexbox, чтобы расположить дочерние контейнеры */
+    justify-content: space-between;
+   /* Распределить пространство между дочерними контейнерами */
     width: 900px;
     height: 650px;
-    align-items: stretch; /* Растянуть дочерние элементы до полной высоты контейнера */
-    margin: 150px auto 100px; /* Отступ сверху 200px, горизонтально - авто (центрирует блок) */
+    align-items: stretch;
+   /* Растянуть дочерние элементы до полной высоты контейнера */
+    margin: 150px auto 100px;
+   /* Отступ сверху 200px, горизонтально - авто (центрирует блок) */
     border-radius: 50px;
     background: rgb(18,18,18);
-background: linear-gradient(270deg, rgba(18,18,18,1) 0%, rgba(50,50,50,1) 100%);    
+    background: linear-gradient(270deg, rgba(18,18,18,1) 0%, rgba(50,50,50,1) 100%);
     color: #ddd;
-    
 }
-
 .login-container, .image-container {
-    width: 50%; /* Каждый блок будет занимать 50% ширины родительского элемента */
+    width: 50%;
+   /* Каждый блок будет занимать 50% ширины родительского элемента */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-
 .image-container img {
     width: 100%;
-    height: 100%; /* Устанавливаем ширину и высоту img равными 100% размера .image-container */
-    object-fit: cover; /* Это свойство масштабирует изображение, чтобы оно заполнило доступный объем */
+    height: 100%;
+   /* Устанавливаем ширину и высоту img равными 100% размера .image-container */
+    object-fit: cover;
+   /* Это свойство масштабирует изображение, чтобы оно заполнило доступный объем */
 }
-
 .login-form h2 {
     text-align: left;
     margin-bottom: 20px;
     margin-top: 5px;
     font-size: 30px;
 }
-
 .login-form p {
     margin-bottom: 10px;
 }
-
 .login-form p label{
     display: block;
     margin-bottom: 10px;
 }
-
 .login-form p select{
     width: 300px;
     height:40px;
     font-weight: bold;
 }
-
-
 .login-form p input {
     width: 300px;
     height: 40px;
@@ -484,37 +439,31 @@ background: linear-gradient(270deg, rgba(18,18,18,1) 0%, rgba(50,50,50,1) 100%);
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-
 .login-form ul{
     width: 300px;
     height: auto;
     color: rgb(255, 91, 62);
     font-size: 12px;
 }
-
 .login-form button{
     width: 300px;
     height: 40px;
 }
-
-
 /* .input-group {
     margin-bottom: 15px;
     margin-right: 15px;
 }
-
 .input-group label {
     display: block;
     margin-bottom: 10px;
 }
-
 .input-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-} */
-
+}
+*/
 button {
     width: 100%;
     padding: 10px;
@@ -526,48 +475,42 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 button:hover {
     background-color: #528f8b;
 }
-
 .switch-to-register {
     text-align: center;
     margin-top: 10px;
 }
-
 .switch-to-register a {
     color: #5f9ea0;
     text-decoration: none;
 }
-
 .switch-to-register a:hover {
     text-decoration: underline;
 }
-
 /* Форма аутентификаций_Конец */
-
 /* Профиль пользователя */
 .profile-container {
     display: flex;
-    align-items: flex-start; /* Исправлено с 'self-start' на 'flex-start' */
+    align-items: flex-start;
+   /* Исправлено с 'self-start' на 'flex-start' */
     margin: 150px;
-    padding: 20px; /* Исправлена опечатка в стиле 'padding' */
+    padding: 20px;
+   /* Исправлена опечатка в стиле 'padding' */
     gap: 20px;
     color: white;
 }
-
 /* Обобщенные стили для заголовков */
 .profile-container h1 {
     font-size: 20px;
-    margin-top: 0; /* Убрано свойство 'margin-top' из '.tariff-info h1' */
+    margin-top: 0;
+   /* Убрано свойство 'margin-top' из '.tariff-info h1' */
 }
-
 .profile-container h3 {
     font-weight: normal;
     font-size: 15px;
 }
-
 /* Стили для секции аватара */
 .avatar-section {
     width: 300px;
@@ -576,7 +519,6 @@ button:hover {
     flex-direction: column;
     align-items: center;
 }
-
 .avatar-image {
     border-radius: 10%;
     width: 300px;
@@ -584,9 +526,9 @@ button:hover {
     object-fit: cover;
     margin-bottom: 10px;
 }
-
 /* Стили для кнопок */
-.btn, .avatar-section label { /* Добавили label к декларации, чтобы применить к нему радиус границы */
+.btn, .avatar-section label {
+   /* Добавили label к декларации, чтобы применить к нему радиус границы */
     border: none;
     width: 300px;
     height: 40px;
@@ -596,132 +538,187 @@ button:hover {
     margin: 5px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    text-decoration: none; /* Нет необходимости повторять, если такой же стиль уже задан для .btn */
-    border-radius: 4px; /* Стиль для label теперь здесь */
+    text-decoration: none;
+   /* Нет необходимости повторять, если такой же стиль уже задан для .btn */
+    border-radius: 4px;
+   /* Стиль для label теперь здесь */
 }
-
 /* Стили для состояния наведения курсора */
 .btn:hover, .remove-avatar:hover, .select-avatar:hover {
-    background-color: #751c1c; /* Установили один общий стиль наведения */
+    background-color: #751c1c;
+   /* Установили один общий стиль наведения */
 }
-
 /* Специфические цвета для разных кнопок */
 .remove-avatar {
     background-color: #d9534f;
 }
-
 .select-avatar {
     background-color: #58b158;
 }
-
 /* Более темный цвет зеленой кнопки при наведении */
 .select-avatar:hover {
-    background-color: #285e28; /* Теперь только одно изменение для лучшей читаемости */
+    background-color: #285e28;
+   /* Теперь только одно изменение для лучшей читаемости */
 }
-
 /* Стили для информации о тарифе */
 .tariff-info {
     flex-grow: 1;
 }
-
 /* Параграфы внутри информации о тарифе */
 .tariff-info p {
     padding: 10px;
 }
 /* Профиль пользователя конец */
-
 .container-news {
-    min-height: 100vh; /* Минимальная высота контейнера равна высоте экрана */
+    min-height: 50vh;
+   /* Минимальная высота контейнера равна высоте экрана */
     overflow: hidden;
     background-color: #222222c4;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Центрируем контейнер по вертикали */
-
+    justify-content: center;
+   /* Центрируем контейнер по вертикали */
 }
-
 .news-item {
-    width: 650px;
-    background: #474747;
+    width: 630px;
+    background: #353535;
     display: flex;
     flex-direction: column;
-    margin: 10px auto; /* Верхний и нижний отступы */
+    margin: 10px auto;
+   /* Верхний и нижний отступы */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .news-item img {
-    width: 100%;          /* Ширина изображения равна 100% ширины блока-родителя */
-    height: auto;         /* Высота автоматически изменяется для сохранения пропорций */
-    object-fit: cover;    /* Изображение покрывает всю область блока, сохраняя свои пропорции */
+    width: 100%;
+   /* Ширина изображения равна 100% ширины блока-родителя */
+    height: auto;
+   /* Высота автоматически изменяется для сохранения пропорций */
+    object-fit: cover;
+   /* Изображение покрывает всю область блока, сохраняя свои пропорции */
     margin-top: 10px;
     margin-bottom: 20px;
-    display: flex;       /* Убрать любые внешние отступы по умолчанию */
-    border-radius: inherit;/* Унаследовать скругление углов от блока, если это необходимо */
-    
+    display: flex;
+   /* Убрать любые внешние отступы по умолчанию */
+    border-radius: inherit;
+   /* Унаследовать скругление углов от блока, если это необходимо */
 }
-
 .news-author-container{
     display: flex;
     width: 80%;
-    height: 70px;
+    height: 55px;
     align-items: flex-end;
     color: white;
 }
-
 .news-author-container p{
-    font-size: 15px;
+    font-size: 13px;
 }
-
-.news-text-container{
+.news-author-username p a{
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+.news-reaction-container{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.news-reaction-container p{
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.news-reaction-button{
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 80px;
+    height: 35px;
+    color: rgb(221, 221, 221);
+    overflow: hidden 
+}
+.news-reaction-button ion-icon {
+    width: 24px;
+   /* Устанавливает ширину иконки */
+    height: 24px;
+   /* Устанавливает высоту иконки */
+    margin-bottom: 5px;
+}
+.news-reaction-button:hover{
+    color: rgb(255, 67, 67);
+   /* Устанавливаем цвет текста и иконок при наведении на кнопку */
+    background-color: transparent;
+}
+.news-like-button, .news-comment-button{
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+.news-text-container {
     display: flex;
     flex-direction: column;
 }
-
+.news-image-container {
+    border-radius: 10px;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+    overflow: hidden;
+   /* Добавляется для скругления границ изображения */
+}
+.news-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   /* Меняем на cover для полного покрытия контейнера */
+   /* Если хотите сохранить contain, оставьте как есть */
+}
 .news-author-img img{
     border-radius: 50%;
     height: 55px;
     width: 55px;
     margin-bottom: 10px;
 }
-
+.news-like-button:hover, .news-comment-button:hover{
+    filter: invert(0);
+}
 .news-author-category-date{
+    display: flex;
+    flex-direction: column;
+    align-content:flex-start;
     padding-left: 10px;
     padding: 10px;
+    margin-bottom: 10px;
+    gap: 3px;
 }
-
 .news-category-date{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
-
-
 .news-title {
     margin: 0;
     padding: 0;
     color: #d4d4d4;
 }
-
 .news-content {
     color: #bbbbbb;
 }
-
 .news-content img{
     width: 100%;
     height: 30%;
 }
-
 .news-date {
     color: #8f8f8f;
     font-size: 0.9em;
 }
-
 /* Чтобы контент не прилипал к верхней части страницы: */
 .news-item:first-child {
     margin-top: 10ch;
 }
-
 /* Чтобы контент не прилипал к нижней части страницы: */
 .news-item:last-child {
     margin-bottom: auto;

@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    {% for news in news_list  %}
     <section class="container-news">
+    {% for news in news_list  %}
         <div class="news-item">
+            <!--Контейнер автора, категории и даты-->
             <div class="news-author-container">
                 <div class="news-author-img">
                     <img src={{ news.author.avatar.url }} alt="Профиль пользователя" class="avatar-image">
                 </div>
                 <div class="news-author-category-date">
                     <div class="news-author-username">
-                        <p>{{ news.author.username }}</p>
+                        <p><a href="{% url "personal:personal-detail" %}">{{ news.author.username }}</a></p>
                     </div>
                     <div class="news-category-date">
                         <p>{{ news.category }}</p>
@@ -19,29 +20,33 @@
                     </div>
                 </div>
             </div>
+            <!--Контейнер текста-->
             <div class="news-text-container">
                 <h2 class="news-title">{{ news.title }}</h2>
                 <p class="news-content">
                     {{ news.text|truncatewords:20 }}
-                <img src={{ news.image.url }} alt="">
+                </p>
+                <!-- Необходимо закрыть тег параграфа перед открытием div для изображения. -->
+                <div class='news-image-container'>
+                    <img src="{{ news.image.url }}" alt="{{ news.title }}">
+                </div>
             </div>
+            <!--Контейнер лайков и комментариев-->
             <div class="news-reaction-container">
-                <div class="news-like-container">
-                    <button class="news-like-button">
-                        <div class="news-like-icon">
-                            <img src="{% static "ico/like_0.png" %}" alt="">
-                        </div>
-                        <span class="news-like-counter">
-                            
-                        </span>
-                    </button>
-                </div>
-                <div class="news-comment-container">
-                    <button class="news-comment-button"></button>
-                </div>
+                <button class="news-reaction-button">
+                    <div class="news-like-button">
+                        <ion-icon name="rocket-outline"></ion-icon>
+                        <p>234</p>
+                    </div>
+                </button>
+                <button class="news-reaction-button">
+                    <div class="news-comment-button">
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                        <p>34</p>
+                    </div>
+                </button>
             </div>
         </div>
-        <!-- More news items here -->
-    </section>
     {% endfor %}
+    </section>
 {% endblock %}
