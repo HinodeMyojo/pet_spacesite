@@ -22,27 +22,30 @@
             </div>
             <!--Контейнер текста-->
             <div class="news-text-container">
-                <h2 class="news-title">{{ news.title }}</h2>
-                <p class="news-content">
-                    {{ news.text|truncatewords:20 }}
-                </p>
-                <!-- Необходимо закрыть тег параграфа перед открытием div для изображения. -->
-                <div class='news-image-container'>
-                    <img src="{{ news.image.url }}" alt="{{ news.title }}">
-                </div>
+                <a href="{% url "news:news-detail" news.id %}">
+                    <h2 class="news-title">{{ news.title }}</h2>
+                    <p class="news-content">
+                        {{ news.text|truncatewords:20 }}
+                    </p>
+                    <!-- Необходимо закрыть тег параграфа перед открытием div для изображения. -->
+                    <div class='news-image-container'>
+                        <img src="{{ news.image.url }}" alt="{{ news.title }}">
+                    </div>
+                </a>
             </div>
             <!--Контейнер лайков и комментариев-->
             <div class="news-reaction-container">
-                <button class="news-reaction-button">
+                <!--Пока не тяну. Лайки на будущее-->
+                {% comment %} <button class="news-reaction-button">
                     <div class="news-like-button">
                         <ion-icon name="rocket-outline"></ion-icon>
                         <p>234</p>
                     </div>
-                </button>
+                </button> {% endcomment %}
                 <button class="news-reaction-button">
                     <div class="news-comment-button">
                         <ion-icon name="chatbox-outline"></ion-icon>
-                        <p>34</p>
+                        <p>{{ news.comment_count }}</p>
                     </div>
                 </button>
             </div>

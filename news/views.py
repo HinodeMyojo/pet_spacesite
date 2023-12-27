@@ -3,8 +3,9 @@ from django.db.models.query import QuerySet
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView, FormView, detail
+from django.views.generic import ListView, DetailView, DeleteView, UpdateView, FormView, detail
 from .models import News, Comment
+from django.db.models import Count
 from django.urls import reverse
 from . forms import CommentForm
 
@@ -16,26 +17,26 @@ class NewsListView(ListView):
         """Вывод определенного кол-во новостей"""
         return self.model.objects.prefetch_related(
             'comment_set'
+        ).annotate(
+            comment_count=Count('comment')
         )[:settings.NEWS_COUNT_ON_HOME_PAGE]
 
 class NewsDetailView(DetailView):
     model = News
     template_name = 'news/detail.html'
 
-    #Оптимизация SQL запросов
-    def get_object(self, queryset=None):
-        obj = get_object_or_404(
-            self.model.objects.prefetch_related('comment_set__author'),
-            pk=self.kwargs['pk']
-        )
-        return obj
-
-    #Добавляем в QuerySet еще context, связанный с формой комментирования
-    #для зарегестрированных пользователей
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        if self.request.user.is_authenticated:
-            context['form'] = CommentForm()
+    def get_object(self, queryset=None): 
+        obj = get_object_or_404( 
+            self.model.objects.prefetch_related('comment_set__author'), 
+            pk=self.kwargs['pk'] 
+        ) 
+        return obj 
+    #Добавляем в QuerySet еще context, связанный с формой комментирования 
+    #для зарегестрированных пользователей 
+    def get_context_data(self, **kwargs): 
+        context = super().get_context_data(**kwargs) 
+        if self.request.user.is_authenticated: 
+            context['form'] = CommentForm() 
         return context
 
 class NewsComment(
@@ -61,10 +62,6 @@ class NewsComment(
     def get_success_url(self) -> str:
         post = self.get_object()
         return reverse('news:detail', kwargs={'pk':post.pk}) + '#comments'
-
-
-class NewsDetailView(DetailView):
-    pass
 
 class CommentBase(LoginRequiredMixin):
     """Базовый класс для работы с комментариями."""

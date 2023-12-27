@@ -590,6 +590,11 @@ button:hover {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.news-item a{
+    text-decoration: none;
+}
+
 .news-item img {
     width: 100%;
    /* Ширина изображения равна 100% ширины блока-родителя */
@@ -611,6 +616,7 @@ button:hover {
     align-items: flex-end;
     color: white;
 }
+
 .news-author-container p{
     font-size: 13px;
 }
@@ -645,7 +651,7 @@ button:hover {
    /* Устанавливает ширину иконки */
     height: 24px;
    /* Устанавливает высоту иконки */
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 .news-reaction-button:hover{
     color: rgb(255, 67, 67);
@@ -655,7 +661,8 @@ button:hover {
 .news-like-button, .news-comment-button{
     display: flex;
     gap: 7px;
-    align-items: center;
+    align-items: flex-end;
+    margin-left: -40px;
 }
 .news-text-container {
     display: flex;
