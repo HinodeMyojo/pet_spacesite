@@ -21,8 +21,9 @@
     justify-content: space-between;
     align-items: center;
 }
-.nav img{
-    width: 200px;
+.nav-image img{
+    width: 150px;
+    height: auto;
     filter: brightness(0) invert(1);
     margin-top: 12px;
 }
@@ -33,13 +34,13 @@
 .nav-links ul li{
     list-style: none;
     display: inline-block;
-    padding: 8px 35px;
+    padding: 8px 30px;
     position: relative;
 }
 .nav-links ul li a{
     color: #e2e2e2;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
 }
 /* Подчеркивание текста */
 .nav-links ul li::after{
@@ -66,7 +67,7 @@
 .authorization-form ul li a{
     color: #ffffff;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
     border-radius: 100px;
     padding: 12px 34px;
     background: #ffffff28;
@@ -205,6 +206,7 @@
     position: relative;
 }
 .description {
+    background-color: white;
     min-height: 100vh;
     width: 100%;
     justify-content: center;
@@ -263,7 +265,7 @@
    /* добавляем небольшой отступ сверху */
 }
 .footer {
-    background-color: #00000060;
+    background-color: black;
     display: flex;
     position: static;
     width: 100%;
@@ -570,7 +572,7 @@ button:hover {
 }
 /* Профиль пользователя конец */
 .container-news {
-    min-height: 50vh;
+    min-height: 100vh;
    /* Минимальная высота контейнера равна высоте экрана */
     overflow: hidden;
     background-color: #222222c4;
@@ -729,4 +731,61 @@ button:hover {
 /* Чтобы контент не прилипал к нижней части страницы: */
 .news-item:last-child {
     margin-bottom: auto;
+}
+
+.news-item-edit-block {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-item-edit-block .news-form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-item-edit-block input[type="text"],
+.news-item-edit-block textarea,
+.news-item-edit-block input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.news-item-edit-block textarea {
+    resize: vertical;
+}
+
+.news-add-text-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.news-add-field label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.news-add-field {
+    width: 100%;
+}
+
+.news-item-edit-block button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

@@ -30,15 +30,12 @@
                     <img src="{{ news.image.url }}" alt="{{ news.title }}">
                 </div>
             </div>
+            {% if request.user.username == news.author.username %}
+                <a href="{% url "news:news-edit" news.id %}">Редактировать новость</a>
+                <a href="{% url "news:news-delete" news.id %}">Удалить новость</a>
+            {% endif %}
             <!--Контейнер лайков и комментариев-->
-            <div class="news-reaction-container">
-                <button class="news-reaction-button">
-                    <div class="news-comment-button">
-                        <ion-icon name="chatbox-outline"></ion-icon>
-                        <p>{{ news.comment_count }}</p>
-                    </div>
-                </button>
-            </div>
+            <!--Сюда добавим комменты-->
         </div>
     </section>
 {% endblock %}

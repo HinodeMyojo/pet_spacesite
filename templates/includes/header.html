@@ -1,7 +1,9 @@
 {% load static %}
 <section class="header">
     <nav class="nav">
-        <a href="{% url "home:homepage" %}"><img src={% static "img/logotype.png" %}></a>
+        <div class="nav-image">
+            <a href="{% url "home:homepage" %}"><img src={% static "img/logotype.png" %}></a>
+        </div>
         <div class="nav-links">
             <ul>
                 <li><a href="{% url "home:homepage" %}">Главная страница</a></li> 
@@ -14,6 +16,9 @@
         <div class="authorization-form">
             <ul>
                 {% if user.is_authenticated %}
+                    {% if 'модератор' in request.user.groups.all|lower %}
+                        <li><a href="{% url "news:news-add" %}">Добавить новость</a></li>    
+                    {% endif %}
                 <li><a href="{% url "personal:personal-detail" %}">{{ user.username }}</a></li>
                 <li><a href="{% url 'logout' %}">Выйти</a></li>
                 {% else %}

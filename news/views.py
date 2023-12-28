@@ -1,13 +1,41 @@
+from typing import Any
 from django.conf import settings
 from django.db.models.query import QuerySet
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.forms.models import BaseModelForm
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, DeleteView, UpdateView, FormView, detail
-from .models import News, Comment
+from django.views.generic import ListView, DetailView, DeleteView, UpdateView, FormView, CreateView, detail
+from .models import News, Comment, Category
 from django.db.models import Count
 from django.urls import reverse
 from . forms import CommentForm
+
+class NewsCreateView(CreateView):
+    model = News
+    template_name = "news/create.html"
+    fields = '__all__'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
+
+
+
+class NewsEditView(UpdateView):
+    model = News
+    template_name = "news/create.html"
+    fields = '__all__'
+
+class NewsDeleteView(DeleteView):
+    model = News
+    template_name = "news/create.html"
+    fields = '__all__'
 
 class NewsListView(ListView):
     model = News
