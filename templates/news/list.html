@@ -11,7 +11,7 @@
                 </div>
                 <div class="news-author-category-date">
                     <div class="news-author-username">
-                        <p><a href="{% url "personal:personal-detail" %}">{{ news.author.username }}</a></p>
+                        <p><a href="{% url "personal:personal-detail" user.id %}">{{ news.author.username }}</a></p>
                     </div>
                     <div class="news-category-date">
                         <p>{{ news.category }}</p>
@@ -42,12 +42,14 @@
                         <p>234</p>
                     </div>
                 </button> {% endcomment %}
+                <a href="{% url "news:news-detail" news.id %}">
                 <button class="news-reaction-button">
                     <div class="news-comment-button">
                         <ion-icon name="chatbox-outline"></ion-icon>
                         <p>{{ news.comment_count }}</p>
                     </div>
                 </button>
+                </a>
             </div>
         </div>
     {% endfor %}

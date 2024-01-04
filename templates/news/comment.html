@@ -1,0 +1,37 @@
+<!--Блок добавления комментариев-->
+<hr>
+{% if user.is_authenticated %}
+  <div class="comment-set-block">
+    {% if '/edit/' in request.path %}
+      <h3>Редактирование комментария</h3>
+      <form action="{% url "news:comment-edit" news.id comment.id %}" method="post">
+        {% include "news/form_fields.html" %}
+      </form>
+    {% elif '/delete/' in request.path %}
+    <h3>Удаление комментария</h3>
+      <form action="{% url "news:comment-delete" news.id comment.id %}" method="post">
+        {% include "news/form_fields.html" %}
+      </form>
+    {% else %}
+      <h3>Оставить комментарий:</h3>
+      <form action="{% url "news:comment-add" news.id %}" method="post">
+        {% include "news/form_fields.html" %}
+      </form>
+    </div>
+    <hr>
+  {% endif %}
+{% endif %}
+<!--Блок комментариев-->
+<h3>Комментарии:</h3>
+{% for comment in news.comment_set.all %}
+  <div class="comment-block">
+    <b><a href="{% url "personal:personal-detail" user.id %}">{{ comment.author }}</a></b>
+    <b>{{ comment.created_at }}</b>
+      <p>{{ comment.text|linebreaksbr }}</p>
+      {% if comment.author == user %}
+        <a href="{% url 'news:comment-edit' news.id comment.id %}">Редактировать</a> |
+        <a href="{% url 'news:comment-delete' news.id comment.id %}">Удалить</a>
+      {% endif %}
+  </div>
+{% endfor %}
+

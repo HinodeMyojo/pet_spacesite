@@ -1,0 +1,36 @@
+{% if '/delete/' not in request.path %}
+  {% csrf_token %}
+  {% for field in form %}
+    <div class="form-group">
+      {{ field }}
+      {% if field.help_text %}
+        <p class="help-text">{{ field.help_text }}</p>
+      {% endif %}
+      {% for error in field.errors %}
+        <p class="text-danger">{{ error }}</p>
+      {% endfor %}
+    </div>
+    {% if '/edit/' not in request.path %}
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+      </div>
+    {% else %}
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+        <button type="reset" class="btn btn-primary">Оставить как есть</button>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% csrf_token %}
+  <div>
+    <h3>Вы уверены, что хотите удалить этот комментарий?</h3>
+    <!-- Отображаем текст удаляемого комментария -->
+    <blockquote>{{ comment.text }}</blockquote>
+  </div>
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">Удалить</button>
+    <button type="reset" class="btn btn-primary">НЕТ!</button>
+  </div>
+{% endif %}
+

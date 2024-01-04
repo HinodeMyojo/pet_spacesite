@@ -73,7 +73,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'news.context_processors.post_access',
             ],
         },
     },
@@ -152,4 +151,3 @@ MEDIA_URL = '/media/'
 
 NEWS_COUNT_ON_HOME_PAGE = 10
 
-POST_ACCESS = ['admin', 'moderator']

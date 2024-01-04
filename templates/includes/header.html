@@ -16,10 +16,10 @@
         <div class="authorization-form">
             <ul>
                 {% if user.is_authenticated %}
-                    {% if request.user.groups.all|lower in post_access_groups %}
+                    {% if perms.news.add_news %}
                         <li><a href="{% url "news:news-add" %}">Добавить новость</a></li>    
                     {% endif %}
-                <li><a href="{% url "personal:personal-detail" %}">{{ user.username }}</a></li>
+                <li><a href="{% url "personal:personal-detail" user.id %}">{{ user.username }}</a></li>
                 <li><a href="{% url 'logout' %}">Выйти</a></li>
                 {% else %}
                 <li><a href="{% url 'login' %}">Вход</a></li>

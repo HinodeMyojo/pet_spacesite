@@ -1,3 +1,4 @@
+from django import forms
 from django.forms import ModelForm
 from django.core.exceptions import ValidationError
 
@@ -16,6 +17,9 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ('text', )
+        widgets = {
+            'text': forms.Textarea(attrs={'class': 'comment-text-area'})
+        }
 
     def clean_text(self):
         """Фильтр мата"""

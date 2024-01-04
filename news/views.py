@@ -1,7 +1,8 @@
 from typing import Any
 from django.conf import settings
+from django.db.models.base import Model as Model
 from django.db.models.query import QuerySet
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.forms.models import BaseModelForm
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404
@@ -11,15 +12,16 @@ from django.db.models import Count
 from django.urls import reverse
 from . forms import CommentForm
 
-class NewsCreateView(CreateView):
+class NewsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = News
     template_name = "news/create.html"
     fields = '__all__'
+    permission_required = 'news.add_news'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-    
+
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
@@ -27,15 +29,17 @@ class NewsCreateView(CreateView):
 
 
 
-class NewsEditView(UpdateView):
+class NewsEditView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = News
     template_name = "news/create.html"
     fields = '__all__'
+    permission_required = 'news.change_news'
 
-class NewsDeleteView(DeleteView):
+class NewsDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = News
     template_name = "news/create.html"
     fields = '__all__'
+    permission_required = 'news.delete_news'
 
 class NewsListView(ListView):
     model = News
@@ -53,18 +57,18 @@ class NewsDetailView(DetailView):
     model = News
     template_name = 'news/detail.html'
 
-    def get_object(self, queryset=None): 
-        obj = get_object_or_404( 
-            self.model.objects.prefetch_related('comment_set__author'), 
-            pk=self.kwargs['pk'] 
-        ) 
-        return obj 
-    #Добавляем в QuerySet еще context, связанный с формой комментирования 
-    #для зарегестрированных пользователей 
-    def get_context_data(self, **kwargs): 
-        context = super().get_context_data(**kwargs) 
-        if self.request.user.is_authenticated: 
-            context['form'] = CommentForm() 
+    def get_object(self, queryset=None):
+        obj = get_object_or_404(
+            self.model.objects.prefetch_related('comment_set__author'),
+            pk=self.kwargs['news_id']
+        )
+        return obj
+    #Добавляем в QuerySet еще context, связанный с формой комментирования
+    #для зарегестрированных пользователей
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.user.is_authenticated:
+            context['form'] = CommentForm()
         return context
 
 class NewsComment(
@@ -75,6 +79,7 @@ class NewsComment(
     model = News
     form_class = CommentForm
     template_name = 'news/detail.html'
+    pk_url_kwarg = 'news_id'
 
     def post(self, request, *args, **kwargs) -> HttpResponse:
         self.object = self.get_object()
@@ -89,26 +94,47 @@ class NewsComment(
 
     def get_success_url(self) -> str:
         post = self.get_object()
-        return reverse('news:detail', kwargs={'pk':post.pk}) + '#comments'
+        return reverse('news:news-detail', kwargs={'news_id': post.pk})
 
 class CommentBase(LoginRequiredMixin):
     """Базовый класс для работы с комментариями."""
     model = Comment
+    news = News
+    form_class = CommentForm
+    template_name = 'news/detail.html'
 
     def get_success_url(self):
-        comment = self.get_objcet()
+        """Возвращение в случае успеха"""
+        post = self.object.news
         return reverse(
-            'news:detail', kwargs={'pk': comment.news.pk}
-        ) + '#comments'
+            'news:news-detail', kwargs={'news_id': post.pk})
 
     def get_queryset(self):
         """Пользователь может работать только со своими комментариями."""
         return self.model.objects.filter(author=self.request.user)
+    
+    def get_context_data(self, **kwargs):
+        """Добавляет информацию о новости (News) в контекст шаблона. 
+        Этот метод вызывается перед рендерингом шаблона, чтобы передать дополнительные
+        переменные в шаблон."""
+
+        context = super().get_context_data(**kwargs)
+        comment = self.get_object()
+        context['news'] = News.objects.get(pk=comment.news_id)
+        return context
+    
+    def get_object(self, queryset=None):
+        obj = get_object_or_404(
+            Comment,
+            pk=self.kwargs['comment_id']
+        )
+        return obj
 
 
 class CommentUpdate(CommentBase, UpdateView):
-    template_name = 'news/edit.html'
-    form_class = CommentForm
+    pass
+    
+
 
 class CommentDelete(CommentBase, DeleteView):
-    template_name = 'news/delete.html'
+    pass
