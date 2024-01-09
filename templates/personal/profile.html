@@ -4,16 +4,19 @@
 {% block content %}
 <div class="profile-container">
     <div class="avatar-section">
-        <img src={{ user.avatar.url }} alt="Профиль пользователя" class="avatar-image">
+        <img src={{ profile.avatar.url }} alt="Профиль пользователя" class="avatar-image">
         <button class="btn remove-avatar">Удалить аватар</button>
         <input type="file" id="avatar-upload" class="avatar-upload" hidden>
         <label for="avatar-upload" class="btn select-avatar">Выбрать аватар</label>
     </div>
     <div class="login-info">
-        <h1>{{ user.username }}</h1>
-        <h3>{{ user.sex }}</h3>
+        <h1>{{ profile.username }}</h1>
+        {% if profile.group.name == 'valar' %}
+            <h1>ГОСПОДИН АДМИНИСТРАТОР!</h1>
+        {% endif %}
+        <h3>{{ profile.sex }}</h3>
         <h3>21 год</h3>
-        <h3>На сайте с: {{ user.date_joined }}</h3>
+        <h3>На сайте с: {{ profile.date_joined }}</h3>
     </div>
     <div class="tariff-info">
         <h1>Информация о тарифе</h1>

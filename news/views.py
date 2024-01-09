@@ -52,6 +52,8 @@ class NewsListView(ListView):
         ).annotate(
             comment_count=Count('comment')
         )[:settings.NEWS_COUNT_ON_HOME_PAGE]
+    
+    # def 
 
 class NewsDetailView(DetailView):
     model = News

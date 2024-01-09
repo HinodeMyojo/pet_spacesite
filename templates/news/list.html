@@ -11,7 +11,7 @@
                 </div>
                 <div class="news-author-category-date">
                     <div class="news-author-username">
-                        <p><a href="{% url "personal:personal-detail" user.id %}">{{ news.author.username }}</a></p>
+                        <p><a href="{% url "personal:personal-detail" news.author.id %}">{{ news.author.username }}</a></p>
                     </div>
                     <div class="news-category-date">
                         <p>{{ news.category }}</p>

@@ -3,8 +3,17 @@
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
-    color: white;
     scroll-behavior: smooth;
+}
+
+.lika{
+    display: flex;
+    width: 300px;
+    height: 100px;
+    align-content: center;
+    justify-content: center;
+    margin-left: 800px;
+    margin-top: 400px;
 }
 
 .header {
@@ -848,3 +857,4 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
 }
+
