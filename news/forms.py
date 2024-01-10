@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from django.core.exceptions import ValidationError
 
-from .models import Comment
+from .models import Comment, News
 
 BAD_WORDS = (
     'хуй',
@@ -29,3 +29,4 @@ class CommentForm(ModelForm):
             if word in lowered_text:
                 raise ValidationError(WARNING)
         return text
+    

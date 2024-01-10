@@ -12,40 +12,10 @@
 {% block content %}
     <section class="container-news">
         <div class="news-item">
-            <form method="post" enctype="multipart/form" class="news-form">
-                <div class="news-item-edit-block">
-                    {% csrf_token %}
-                    <div class="news-add-text-title">
-                        {% if '/edit/' in request.path %}
-                        Редактирование публикации
-                        {% elif "/delete/" in request.path %}
-                        Удаление публикации
-                        {% else %}
-                        Добавление публикации
-                        {% endif %}
-                    </div>
-                        <div class="news-add-field">
-                            <label for="news-add-title">Заголовок</label>
-                            <input type="text" id="news-add-title" name="title">
-                        </div>
-                        <div class="news-add-field">
-                            <label for="news-add-category">Категория</label>
-                            <select name="category" id="news-add-category">
-                                {% for cat in categories %}
-                                    <option>{{ cat }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="news-add-field">
-                            <label for="news-add-maintext">Текст</label>
-                            <textarea id="news-add-maintext" name="text" rows="5"></textarea>
-                        </div>
-                        <div class="news-add-field">
-                            <label for="image" class="form-label">Картинка</label>
-                            <input type="file" class="form-control" id="image" name="image">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Опубликовать</button>
-                </div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Save">
             </form>
         </div>
     </section>

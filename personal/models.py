@@ -1,7 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group
 
 # Create your models here.
+def get_default_group():
+    return Group.objects.get(name='Человек').pk
 
 class CustomUser(AbstractUser):
     MAN = 'Муж.'

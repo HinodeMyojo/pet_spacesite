@@ -9,24 +9,41 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, DeleteView, UpdateView, FormView, CreateView, detail
 from .models import News, Comment, Category
 from django.db.models import Count
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from . forms import CommentForm
 
-class NewsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+# class NewsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+#     model = News
+#     template_name = "news/create.html"
+#     fields = '__all__'
+#     permission_required = 'news.add_news'
+
+#     def form_valid(self, form):
+#         form.instance.author = self.request.user
+#         return super().form_valid(form)
+
+#     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+#         context = super().get_context_data(**kwargs)
+#         context['categories'] = Category.objects.all()
+#         return context
+    
+class NewsCreateView(CreateView):
     model = News
     template_name = "news/create.html"
-    fields = '__all__'
-    permission_required = 'news.add_news'
+    fields = ['title', 'text', 'image', 'category']
+    success_url = reverse_lazy('news:news-list')
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        """
+        Указывает автора для поста.
+        """
+        form.instance.author = self.request.user  # Должно работать корректно
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
-
 
 
 class NewsEditView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
