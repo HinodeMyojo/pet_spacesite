@@ -1,10 +1,11 @@
-
-from typing import Any
-from django.shortcuts import render
-from django.views.generic import DetailView
+from django.views.generic import UpdateView
 from django.contrib.auth import get_user_model
+from .forms import CustonUserChangeForm
 
-class ProfileDetailView(DetailView):
-    model = get_user_model()
+User = get_user_model()
+
+class CustomUserUpdateView(UpdateView):
+    model = User
+    form_class = CustonUserChangeForm
     template_name = 'personal/profile.html'
     context_object_name = 'profile'

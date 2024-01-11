@@ -1,9 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, Group
-
-# Create your models here.
-def get_default_group():
-    return Group.objects.get(name='Человек').pk
+from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
     MAN = 'Муж.'
@@ -26,5 +22,5 @@ class CustomUser(AbstractUser):
         blank=True,
         null=True,
         upload_to='avatars/',# Изменено на upload_to с путем к папке 'avatars/'
-        default='defaults/default-avatar.jpg',
+        default='avatars/default-avatar.jpg',
     )

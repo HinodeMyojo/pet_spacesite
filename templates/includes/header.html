@@ -23,7 +23,7 @@
                         <button type="submit" class="header-button">Добавить новость</button>
                     </form>
                 {% endif %}
-                    <form action="{% url 'personal:personal-detail' user.id %}" method="get">
+                    <form action="{% url 'personal:personal' user.id %}" method="get">
                         <button type="submit" class="header-button">{{ user.username }}</button>
                     </form>
                 <form action="{% url 'logout' %}" method="post">

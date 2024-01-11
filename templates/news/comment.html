@@ -25,7 +25,7 @@
 <h3>Комментарии:</h3>
 {% for comment in news.comment_set.all %}
   <div class="comment-block">
-    <b><a href="{% url "personal:personal-detail" comment.author.id %}">{{ comment.author }}</a></b>
+    <b><a href="{% url "personal:personal" comment.author.id %}">{{ comment.author }}</a></b>
     <b>{{ comment.created_at }}</b>
       <p>{{ comment.text|linebreaksbr }}</p>
       {% if comment.author == user %}

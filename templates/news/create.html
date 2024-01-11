@@ -14,8 +14,22 @@
         <div class="news-item">
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="Save">
+                <div class="news-item-edit-block">
+                    <div class="news-add-text-title">
+                        <h2>Добавление новости</h2>
+                    </div>
+                    {% for field in form %}
+                        <p>{{ field.label_tag }} 
+                            <br>
+                            {{ field }}
+                        </p>
+                    {% endfor %}
+                        {% if perms.category.add_category %}
+                            <a href="{% url "news:category-add" %}">Добавить категорию</a>
+                        {% endif %}
+                    <button class="news-item-edit-block">Опубликовать</button>
+                </div>
+                
             </form>
         </div>
     </section>

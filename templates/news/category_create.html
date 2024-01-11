@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    {% if '/edit/' in request.path %}
+    Редактирование категории
+    {% elif "/delete/" in request.path %}
+    Удаление категории
+    {% else %}
+    Добавление категории
+    {% endif %}
+{% endblock title %}
+{% block content %}
+    <section class="container-news">
+        <div class="news-item">
+            <form method="post">
+                {% csrf_token %}
+                <div class="news-item-edit-block">
+                    <div class="news-add-text-title">
+                        <h2>Создание категории</h2>
+                    </div>
+                    {% for field in form %}
+                        <p>{{ field.label_tag }} 
+                            <br>
+                            {{ field }}
+                        </p>
+                    {% endfor %}
+                    <button class="news-item-edit-block">Добавить</button>
+                </div>
+                
+            </form>
+        </div>
+    </section>
+{% endblock %}

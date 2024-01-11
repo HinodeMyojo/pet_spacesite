@@ -12,21 +12,7 @@ from django.db.models import Count
 from django.urls import reverse, reverse_lazy
 from . forms import CommentForm
 
-# class NewsCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
-#     model = News
-#     template_name = "news/create.html"
-#     fields = '__all__'
-#     permission_required = 'news.add_news'
 
-#     def form_valid(self, form):
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
-
-#     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
-#         context = super().get_context_data(**kwargs)
-#         context['categories'] = Category.objects.all()
-#         return context
-    
 class NewsCreateView(CreateView):
     model = News
     template_name = "news/create.html"
@@ -69,8 +55,8 @@ class NewsListView(ListView):
         ).annotate(
             comment_count=Count('comment')
         )[:settings.NEWS_COUNT_ON_HOME_PAGE]
-    
-    # def 
+
+    # def
 
 class NewsDetailView(DetailView):
     model = News
@@ -131,9 +117,9 @@ class CommentBase(LoginRequiredMixin):
     def get_queryset(self):
         """Пользователь может работать только со своими комментариями."""
         return self.model.objects.filter(author=self.request.user)
-    
+
     def get_context_data(self, **kwargs):
-        """Добавляет информацию о новости (News) в контекст шаблона. 
+        """Добавляет информацию о новости (News) в контекст шаблона.
         Этот метод вызывается перед рендерингом шаблона, чтобы передать дополнительные
         переменные в шаблон."""
 
@@ -141,7 +127,7 @@ class CommentBase(LoginRequiredMixin):
         comment = self.get_object()
         context['news'] = News.objects.get(pk=comment.news_id)
         return context
-    
+
     def get_object(self, queryset=None):
         obj = get_object_or_404(
             Comment,
@@ -152,8 +138,15 @@ class CommentBase(LoginRequiredMixin):
 
 class CommentUpdate(CommentBase, UpdateView):
     pass
-    
+
 
 
 class CommentDelete(CommentBase, DeleteView):
     pass
+
+class CategoryCreateView(CreateView):
+    """Класс создания Категорий"""
+    model = Category
+    template_name = "news/category_create.html"
+    fields = ['title', 'description', 'slug']
+    success_url = reverse_lazy('news:news-list')
