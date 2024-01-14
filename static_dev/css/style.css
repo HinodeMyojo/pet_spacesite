@@ -495,61 +495,17 @@ button:hover {
 
 .profile-main-container{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Равномерно распределяет дочерние элементы */
+    flex-direction: row;
     color: white;
     margin: 100px 400px 20px 400px;
     height: 100%;
     background-color: #353535;
-    border-radius: 10px;
+    border-radius: 35px;
 }
 .profile-container{
     display: flex;
     justify-content: flex-start;
 }
-
-.element h1{
-    font-size: 25px;
-}
-
-.element{
-    margin: 30px;
-    align-items: baseline;
-}
-
-.profile-info-container{
-    flex: 1;
-    justify-items: end;
-}
-
-.profile-lite-and-all-info{
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-login-sex-age-since{
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-sex-age-since{
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-
-.profile-image-container{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 250px;
-}
-.profile-image img{
-    border-radius: 10px;
-    width: 250px;
-    height: 250px;
-}
-
 /* Профиль пользователя конец */
 .container-news {
     min-height: 100vh;

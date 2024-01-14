@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+     <!-- Add the slick-theme.css if you want default styling -->
+     <link rel="stylesheet" type="text/css" href="slick/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="slick/slick/slick-theme.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Space!</title>
+</head>
+<body class="body">
+    <section class="header">
+        <nav class="nav">
+            <div class="nav-image">
+                <a href="#">
+                    <img src="img/logo.png" alt="Логотип">
+                </a>
+            </div>
+            <div class="nav-links">
+            <ul>
+                <li><a href="#">Главная страница</a></li> 
+                <li><a href="#">Тарифы</a></li>
+                <li><a href="#">Как это работает</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">О нас</a></li>
+            </ul>
+            </div>
+            <div class="authorization-form">
+            <form action="{% url 'news:news-add' %}" method="post">
+                <button type="submit" class="header-button">Добавить новость</button>
+            </form>
+            <form action="{% url 'personal:personal' user.id %}" method="get">
+                <button type="submit" class="header-button">ЮзерНейм</button>
+            </form>
+            <form action="{% url 'logout' %}" method="post">
+                <button type="submit" class="header-button">Выйти</button>
+            </form>
+            <!-- <form action="{% url 'login' %}" method="post">
+                <button type="submit" class="header-button">Войти</button>
+            </form>
+            <form action="{% url 'registration' %}" method="post">
+                <button type="submit" class="header-button">Регистрация</button>
+            </form> -->
+            </div>
+        </nav>
+    </section>
+    #ТУТ ПИСАТЬ КОД
+    <section class="footer"> 
+        <nav class="foot-links"> 
+            <ul> 
+                <li><a href="index.html">H.M.Sateline Corporation © 2023</a></li>  
+                <li><a href="#">Лицензии и сертификаты</a></li> 
+                <li><a href="#">Правовая информация</a></li> 
+            </ul> 
+        </nav> 
+    </section>
+</body>

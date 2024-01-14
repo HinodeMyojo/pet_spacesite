@@ -4,49 +4,10 @@
 {% block title %}Главная страница{% endblock title %}
 {% block content %}
 <div class="profile-main-container">
-    <div class="profile-container">
-        <div class="element">
-            <div class="profile-image-container">
-                <div class="profile-image">
-                    <img src={{ profile.avatar.url }} alt="Профиль пользователя">
-                </div>
-                <div class="profile-edit-button">
-                    <button>Редактировать профиль</button>
-                </div>
-            </div>
-        </div>
-        <div class="element">
-            <div class="profile-info-container">
-                <div class="profile-lite-and-all-info">
-                    <div class="profile-login-sex-age-since">
-                        <h1>{{ profile.username }}</h1>
-                        <div class="profile-sex-age-since">
-                            <p>{{ profile.sex }}</p>|
-                            <p>{{ age|russian_pluralize }}</p>|
-                            <p>На сайте с: {{ profile.date_joined.year }} г.</p>
-                        </div>
-                    </div>
-                    <div class="profile-range-email-telephone-activity">
-                        
-                    </div>
-                </div>
-                <div class="profile-info-activity">
+    <div class="profile-container-info">
 
-                </div>
-            </div>
-        </div>
-        <div class="element">
-            <div class="profile-plans-container">
-                <h1>Ваш тарифный план:</h1>
-                {% if profile.plan %}
-                    {{ profile.plan }}
-                {% else %}
-                    Нет!
-                {% endif %}
-            </div>
-        </div>
     </div>
-    <div class="profile-container">
+    <div class="profile-container-data">
         
     </div>
 </div>
