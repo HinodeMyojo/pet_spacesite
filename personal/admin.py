@@ -7,7 +7,8 @@ from .models import CustomUser
 UserAdmin.fieldsets += (
     # Добавляем кортеж, где первый элемент — это название раздела в админке,
     # а второй элемент — словарь, где под ключом fields можно указать нужные поля.
-    ('Extra Fields', {'fields': ('sex', 'avatar',)}),
+    ('Тариф', {'fields': ('plan',)}),
+    ('Экстра', {'fields': ('sex', 'avatar', 'date_birth')}),
 )
 
 admin.site.register(CustomUser, UserAdmin)

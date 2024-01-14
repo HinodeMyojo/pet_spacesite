@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from plans.models import Plans
+from phonenumber_field.modelfields import PhoneNumberField
 
 class CustomUser(AbstractUser):
     MAN = 'Муж.'
@@ -22,5 +24,22 @@ class CustomUser(AbstractUser):
         blank=True,
         null=True,
         upload_to='avatars/',# Изменено на upload_to с путем к папке 'avatars/'
-        default='avatars/default-avatar.jpg',
+        default='defaults/default-avatar.jpg',
     )
+    date_birth = models.DateField(
+        'Дата рождения',
+        null=True,
+        blank=True
+    )
+    plan = models.ForeignKey(
+        Plans,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name='users_plan'
+        )
+    phone_number = PhoneNumberField(
+        'Номер телефона',
+        null=False,
+        blank=False,
+        unique=True
+        )

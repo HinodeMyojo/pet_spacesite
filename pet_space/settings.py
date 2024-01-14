@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'personal.apps.PersonalConfig',
     'news.apps.NewsConfig',
+    'personal.templatetags',
+    'phonenumber_field'
 ]
 
 MIDDLEWARE = [
@@ -87,7 +89,7 @@ WSGI_APPLICATION = 'pet_space.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': "postgres",
+       'NAME': "petspace",
        'USER': 'postgres',
        'PASSWORD': 'admin',
        'HOST': 'localhost',

@@ -1,35 +1,53 @@
 {% extends "base.html" %}
 {% load static %}
+{% load age_filters %}
 {% block title %}Главная страница{% endblock title %}
 {% block content %}
-<div class="profile-container">
-    <div class="avatar-section">
-        {% comment %} <img src={{ profile.avatar.url }} alt="Профиль пользователя" class="avatar-image">
-        <button class="btn remove-avatar">Удалить аватар</button>
-        <input type="file" id="avatar-upload" class="avatar-upload" hidden>
-        <label for="avatar-upload" class="btn select-avatar">Выбрать аватар</label> {% endcomment %}
-        {% for field in form %}
-        <p>{{ field.label_tag }} 
-            <br>
-            {{ field }}
-        </p>
-        {% endfor %}
+<div class="profile-main-container">
+    <div class="profile-container">
+        <div class="element">
+            <div class="profile-image-container">
+                <div class="profile-image">
+                    <img src={{ profile.avatar.url }} alt="Профиль пользователя">
+                </div>
+                <div class="profile-edit-button">
+                    <button>Редактировать профиль</button>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div class="profile-info-container">
+                <div class="profile-lite-and-all-info">
+                    <div class="profile-login-sex-age-since">
+                        <h1>{{ profile.username }}</h1>
+                        <div class="profile-sex-age-since">
+                            <p>{{ profile.sex }}</p>|
+                            <p>{{ age|russian_pluralize }}</p>|
+                            <p>На сайте с: {{ profile.date_joined.year }} г.</p>
+                        </div>
+                    </div>
+                    <div class="profile-range-email-telephone-activity">
+                        
+                    </div>
+                </div>
+                <div class="profile-info-activity">
+
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div class="profile-plans-container">
+                <h1>Ваш тарифный план:</h1>
+                {% if profile.plan %}
+                    {{ profile.plan }}
+                {% else %}
+                    Нет!
+                {% endif %}
+            </div>
+        </div>
     </div>
-    <div class="login-info">
-        <h1>{{ profile.username }}</h1>
-        {% if profile.group.name == 'valar' %}
-            <h1>ГОСПОДИН АДМИНИСТРАТОР!</h1>
-        {% endif %}
-        <h3>{{ profile.sex }}</h3>
-        <h3>21 год</h3>
-        <h3>На сайте с: {{ profile.date_joined }}</h3>
-    </div>
-    <div class="tariff-info">
-        <h1>Информация о тарифе</h1>
-        <h3>Название тарифа: Галактический</h3>
-        <h3>Скорость передачи данных: 100 Гбит/с</h3>
-        <h3>Цена: 1500 кредитов в месяц</h3>
-        <h3>Статус: Активен</h3>
+    <div class="profile-container">
+        
     </div>
 </div>
 {% endblock content %}

@@ -10,7 +10,7 @@ class BaseModel(models.Model):
     """
     created_at = models.DateTimeField(auto_now_add=True)
 
-    modified_at = models.DateTimeField(auto_now_add=False, auto_now=True)
+    modified_at = models.DateTimeField(auto_now_add=False, auto_now=True, null=True)
 
     class Meta:
         abstract = True

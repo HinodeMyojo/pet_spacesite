@@ -8,6 +8,6 @@ User = get_user_model()
 def add_user_to_human_group(sender, instance, created, **kwargs):
     if created:
         # Получаем или создаем группу "human"
-        group, _ = models.Group.objects.get_or_create(name='human')
+        group, _ = models.Group.objects.get_or_create(name='Человек')
         # Добавить пользователя в группу
         instance.groups.add(group)
