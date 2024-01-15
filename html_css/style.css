@@ -645,7 +645,7 @@ button:hover {
 }
 
 .profile-plan-icon img{
-    width: 180px;
+    width: 170px;
     height: auto;
 }
 
@@ -681,7 +681,6 @@ button:hover {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    background-color: 1D1D1D;
 }
 
 .profile-plan-info-buttons button{
@@ -689,6 +688,7 @@ button:hover {
     padding: 10px 13px;
     border-radius: 20px;
     font-size: 20px;
+    background-color: #1D1D1D;
 }
 
 /* Профиль пользователя конец */
