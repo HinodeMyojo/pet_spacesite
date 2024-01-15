@@ -49,14 +49,10 @@ class NewsListView(ListView):
     template_name = 'news/list.html'
 
     def get_queryset(self):
-        """Вывод определенного кол-во новостей"""
-        return self.model.objects.prefetch_related(
-            'comment_set'
-        ).annotate(
+        """Вывод определенного кол-во новостей, отфильтрованных по публикации"""
+        return self.model.objects.annotate(
             comment_count=Count('comment')
-        )[:settings.NEWS_COUNT_ON_HOME_PAGE]
-
-    # def
+        ).order_by('-created_at')[:settings.NEWS_COUNT_ON_HOME_PAGE]
 
 class NewsDetailView(DetailView):
     model = News
