@@ -4,19 +4,15 @@ from plans.models import Plans
 from phonenumber_field.modelfields import PhoneNumberField
 
 class CustomUser(AbstractUser):
-    MAN = 'Муж.'
-    WOMAN = 'Жен.'
-    SHREK = 'Шрек'
-    SEXS = [
-        (MAN, 'Мужчина'),
-        (WOMAN, 'Женщина'),
-        (SHREK, 'Шрек'),
-    ]
+    class SexChoices(models.TextChoices):
+        MAN = 'Муж.', 'Мужчина'
+        WOMAN = 'Жен.', 'Женщина'
+        SHREK = 'Шрек', 'Шрек'
     sex = models.CharField(
         'Пол',
         max_length=5,
-        choices=SEXS,
-        default=SHREK,
+        choices=SexChoices.choices,
+        default=SexChoices.SHREK,
     )
 
     avatar = models.ImageField(
@@ -39,7 +35,7 @@ class CustomUser(AbstractUser):
         )
     phone_number = PhoneNumberField(
         'Номер телефона',
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         unique=True
         )

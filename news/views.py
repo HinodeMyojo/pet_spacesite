@@ -50,9 +50,10 @@ class NewsListView(ListView):
 
     def get_queryset(self):
         """Вывод определенного кол-во новостей, отфильтрованных по публикации"""
-        return self.model.objects.annotate(
-            comment_count=Count('comment')
-        ).order_by('-created_at')[:settings.NEWS_COUNT_ON_HOME_PAGE]
+        obj = self.model.objects.select_related('author','category')
+        obj = obj.annotate(comment_count=Count('comment'))
+        obj = obj.order_by('-created_at')[:settings.NEWS_COUNT_ON_HOME_PAGE]
+        return obj
 
 class NewsDetailView(DetailView):
     model = News
