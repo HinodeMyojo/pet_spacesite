@@ -6,6 +6,10 @@
     scroll-behavior: smooth;
 }
 
+h2, h3{
+    font-weight: normal;
+}
+
 /* .lika{
     display: flex;
     width: 300px;
@@ -519,14 +523,64 @@ button:hover {
     text-decoration: none;
     color: white;
 }
-.profile-container-info{
+.profile-container-info-container{
+    display: flex;
     background-color: var(--color-grey);
     width: 320px;
-    height: 684px;
+    height: 670px;
     margin: 30px;
     border-radius: 30px;
+    font-weight: normal;
 
 }
+
+.profile-container-info{
+    flex: 1;
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.profile-container-avatar img{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 60px;
+    border-bottom-left-radius: 0px;
+}
+
+.profile-container-element{
+    height: 45px;
+    display: flex;
+}
+
+.profile-container-plan{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.profile-container-plan-icon {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.profile-container-plan-icon img {
+    width: 100%;  /* Заполняет ширину блока */
+    height: 100%; /* Заполняет высоту блока */
+    object-fit: cover; /* Подрезает и сохраняет пропорции изображения */
+}
+
+.profile-container-plan-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-container-plan-info h3{
+    font-size: 10px;
+}
+
 .profile-container-data{
     display: flex;
     flex-direction: column;
@@ -534,7 +588,21 @@ button:hover {
     margin-bottom: 30px;
 }
 
+.profile-container-condition-icon {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
 
+.profile-container-condition-icon img {
+    width: 43px;
+    height: 43px;
+}
+
+.profile-container-condition-info{
+    display: flex;
+    flex-direction: column;
+}
 
 .profile-nav-container{
     display: flex;
