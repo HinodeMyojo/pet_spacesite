@@ -6,6 +6,19 @@
     scroll-behavior: smooth;
 }
 
+  /* the slides */
+.slick-slide {
+    margin: 0 30px;
+    display: none;
+    float: left;
+    height: auto;
+}
+
+/* the parent */
+.slick-list {
+    margin: 0 -27px;
+}
+
 h2, h3{
     font-weight: normal;
 }
@@ -502,6 +515,7 @@ button:hover {
     --profile-nav-gap: 37px;
     --color-grey: #646464;
     --border-radius: 35px;
+    --profile-offer-height: 250px;
 }
 
 .profile-main-container{
@@ -525,6 +539,7 @@ button:hover {
 }
 .profile-container-info-container{
     display: flex;
+    flex-direction: column;
     background-color: var(--color-grey);
     width: 320px;
     height: 670px;
@@ -544,7 +559,7 @@ button:hover {
 
 .profile-container-avatar img{
     width: 100%;
-    height: 260px;
+    height: 270px;
     object-fit: cover;
     border-radius: 60px;
     border-bottom-left-radius: 0px;
@@ -553,11 +568,21 @@ button:hover {
 .profile-container-element{
     height: 45px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    
+}
+
+.profile-container-element .text-small{
+    font-size: 13px;
 }
 
 .profile-container-plan{
     display: flex;
     flex-direction: row;
+    justify-content: center; 
+    align-items: center;
     gap: 10px;
 }
 
@@ -567,18 +592,24 @@ button:hover {
     align-items: center;
 }
 .profile-container-plan-icon img {
-    width: 100%;  /* Заполняет ширину блока */
-    height: 100%; /* Заполняет высоту блока */
+    width: 43px;
+    height: 43px;
     object-fit: cover; /* Подрезает и сохраняет пропорции изображения */
 }
 
 .profile-container-plan-info{
     display: flex;
     flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
 }
 
 .profile-container-plan-info h3{
-    font-size: 10px;
+    font-size: 13px;
+}
+
+.profile-container-plan-info .font-profile-plan{
+    font-size: 24px;
 }
 
 .profile-container-data{
@@ -602,6 +633,62 @@ button:hover {
 .profile-container-condition-info{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly
+}
+
+.profile-container-app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container-app-block {
+    width: 292px;
+    border-radius: 35px;
+    height: 100px; 
+    display: flex;
+    background-color: #1D1D1D;
+}
+
+.profile-container-app{
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.profile-container-app-icon {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+
+.profile-container-app-icon img {
+    width: 60px;
+    height: 60px;
+    transform: rotate(-90deg);
+}
+
+.profile-container-app-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: baseline;
+}
+
+.profile-container-app-info .text-large {
+    font-size: 20px;
+
+}
+.profile-container-app-info .text-medium {
+    font-size: 19px;
+
+}
+.profile-container-app-info .text-small {
+    font-size: 11px;
+    color: #A8A8A8;
 }
 
 .profile-nav-container{
@@ -623,7 +710,7 @@ button:hover {
 }
 
 .profile-nav a{
-    font-size: 19px;
+    font-size: 18px;
     padding: var(--nav-padding-profile-nav-container) 34px;
 }
 
@@ -658,7 +745,7 @@ button:hover {
 
 .profile-offer{
     width: 327px;
-    height: 250px;
+    height: var(--profile-offer-height);
     background-color: var(--color-grey);
     border-radius: var(--border-radius);
 }
@@ -757,6 +844,54 @@ button:hover {
     border-radius: 20px;
     font-size: 20px;
     background-color: #1D1D1D;
+}
+
+.profile-offer{
+    box-sizing: border-box;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}
+
+.profile-offer h3{
+    font-size: 26px;
+}
+
+.profile-offer-block{
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-offer-block-text{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    gap: 45px;
+}
+
+.profile-offer-block-text .profile-offer-block-small-text{
+    font-size: 14px;
+    color: #d3d3d3;
+}
+
+.profile-offer-block-text .profile-offer-block-big-text{
+    font-size: 24px;
+}
+
+
+.profile-offer-block-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-offer-block-icon img{
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
 }
 
 /* Профиль пользователя конец */
@@ -1038,4 +1173,6 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
 }
+
+
 
