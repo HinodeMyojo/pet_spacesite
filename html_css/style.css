@@ -6,19 +6,6 @@
     scroll-behavior: smooth;
 }
 
-  /* the slides */
-.slick-slide {
-    margin: 0 30px;
-    display: none;
-    float: left;
-    height: auto;
-}
-
-/* the parent */
-.slick-list {
-    margin: 0 -27px;
-}
-
 h2, h3{
     font-weight: normal;
 }
@@ -744,7 +731,7 @@ button:hover {
 }
 
 .profile-offer{
-    width: 327px;
+
     height: var(--profile-offer-height);
     background-color: var(--color-grey);
     border-radius: var(--border-radius);

@@ -6,6 +6,10 @@
     scroll-behavior: smooth;
 }
 
+h2, h3{
+    font-weight: normal;
+}
+
 /* .lika{
     display: flex;
     width: 300px;
@@ -26,7 +30,7 @@
 }
 .body{
     background-color: #222222c4;
-    background-image: url(../img//background-second.png);
+    background-image: url(img//background-second.png);
     background-size: cover;
     
 }
@@ -493,19 +497,390 @@ button:hover {
 /* Форма аутентификаций_Конец */
 /* Профиль пользователя начало*/
 
+:root{
+    --nav-padding-profile-nav-container: 4px;
+    --profile-nav-gap: 37px;
+    --color-grey: #646464;
+    --border-radius: 35px;
+    --profile-offer-height: 250px;
+}
+
 .profile-main-container{
     display: flex;
     flex-direction: row;
     color: white;
-    margin: 100px 400px 20px 400px;
-    height: 100%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    /* margin: 100px 400px 20px 400px;100px 400px 20px 400px */
+    width: 1100px;
+    min-height: 100ch;
     background-color: #353535;
-    border-radius: 35px;
+    border-radius: var(--border-radius);
 }
-.profile-container{
+
+.profile-main-container a{
+    text-decoration: none;
+    color: white;
+}
+.profile-container-info-container{
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    background-color: var(--color-grey);
+    width: 320px;
+    height: 670px;
+    margin: 30px;
+    border-radius: 30px;
+    font-weight: normal;
+
 }
+
+.profile-container-info{
+    flex: 1;
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.profile-container-avatar img{
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 60px;
+    border-bottom-left-radius: 0px;
+}
+
+.profile-container-element{
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    
+}
+
+.profile-container-element .text-small{
+    font-size: 13px;
+}
+
+.profile-container-plan{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-container-plan-icon {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.profile-container-plan-icon img {
+    width: 43px;
+    height: 43px;
+    object-fit: cover; /* Подрезает и сохраняет пропорции изображения */
+}
+
+.profile-container-plan-info{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.profile-container-plan-info h3{
+    font-size: 13px;
+}
+
+.profile-container-plan-info .font-profile-plan{
+    font-size: 24px;
+}
+
+.profile-container-data{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.profile-container-condition-icon {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+
+.profile-container-condition-icon img {
+    width: 43px;
+    height: 43px;
+}
+
+.profile-container-condition-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
+}
+
+.profile-container-app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container-app-block {
+    width: 292px;
+    border-radius: 35px;
+    height: 100px; 
+    display: flex;
+    background-color: #1D1D1D;
+}
+
+.profile-container-app{
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.profile-container-app-icon {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+
+.profile-container-app-icon img {
+    width: 60px;
+    height: 60px;
+    transform: rotate(-90deg);
+}
+
+.profile-container-app-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: baseline;
+}
+
+.profile-container-app-info .text-large {
+    font-size: 20px;
+
+}
+.profile-container-app-info .text-medium {
+    font-size: 19px;
+
+}
+.profile-container-app-info .text-small {
+    font-size: 11px;
+    color: #A8A8A8;
+}
+
+.profile-nav-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: var(--nav-padding-profile-nav-container); /*Напрямую зависит от первого padding в .profile-nav a*/
+    gap: var(--profile-nav-gap);
+}
+
+.profile-nav{
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center;
+    background-color: var(--color-grey);
+    border-radius: 25px;
+    width: 145px;
+    height: 30px;
+    
+}
+
+.profile-nav a{
+    font-size: 18px;
+    padding: var(--nav-padding-profile-nav-container) 34px;
+}
+
+.profile-history-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: var(--profile-nav-gap);
+}
+
+.profile-history a img {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%; /* Изменил на 50% для создания идеального круга */
+    border: #9D9D9D 2px solid;
+    box-sizing: border-box;
+    object-fit: cover; /* Добавлено */
+}
+
+.profile-offer-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.profile-offers{
+    display: flex;
+    flex-direction: row;
+    gap: var(--profile-nav-gap) ;
+}
+
+.profile-offer{
+
+    height: var(--profile-offer-height);
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+}
+
+.scroll{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-plans-container{
+    width: 691px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.profile-plan{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 14px;
+}
+
+.profile-plan-title{
+    font-size: 36px;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+}
+.profile-plan-title img{
+    height: 48px;
+    width: auto;
+}
+
+.profile-plan-card{
+    width: 100%;
+    min-height: 320px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+}
+
+.profile-plan-icon{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-plan-icon img{
+    width: 170px;
+    height: auto;
+}
+
+.profile-plan-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: baseline;
+    justify-content: center;
+    gap: 38px;
+    padding-right: 10px;
+}
+
+.profile-plan-info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.profile-plan-element{
+    gap: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-plan-element img{
+    width: 35px;
+    height: auto;
+}
+
+.profile-plan-info-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.profile-plan-info-buttons button{
+    width: auto;
+    padding: 10px 13px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: #1D1D1D;
+}
+
+.profile-offer{
+    box-sizing: border-box;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}
+
+.profile-offer h3{
+    font-size: 26px;
+}
+
+.profile-offer-block{
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-offer-block-text{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    gap: 45px;
+}
+
+.profile-offer-block-text .profile-offer-block-small-text{
+    font-size: 14px;
+    color: #d3d3d3;
+}
+
+.profile-offer-block-text .profile-offer-block-big-text{
+    font-size: 24px;
+}
+
+
+.profile-offer-block-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-offer-block-icon img{
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+}
+
 /* Профиль пользователя конец */
 .container-news {
     min-height: 100vh;
@@ -785,4 +1160,6 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
 }
+
+
 

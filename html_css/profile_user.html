@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-     <!-- Add the slick-theme.css if you want default styling -->
-     <link rel="stylesheet" type="text/css" href="slick/slick/slick.css"/>
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="slick/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="node_modules/@splidejs/splide/dist/css/splide-core.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
     <title>Space!</title>
 </head>
 <body class="body">
@@ -139,75 +137,84 @@
                 </div>
             </div>
             <div class="profile-offer-container">
-                <div class="profile-offers">
-                    <div class="profile-offer">
-                        <h3>Оставьте свой email</h3><!--Текст предложения-->
-                        <div class="profile-offer-block">
-                            <div class="profile-offer-block-text">
-                                <p class="profile-offer-block-small-text">
-                                    Подарки и скидки придут к вам сами
-                                </p>
-                                <p class="profile-offer-block-big-text">
-                                    <a href="">Получить</a>
-                                </p>
-                            </div>
-                            <div class="profile-offer-block-icon">
-                                <img src="img/alien.png" alt="">
-                            </div>
-                        </div>
+                <section class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <div class="profile-offer">
+                                        <h3>Оставьте свой email</h3><!--Текст предложения-->
+                                        <div class="profile-offer-block">
+                                            <div class="profile-offer-block-text">
+                                                <p class="profile-offer-block-small-text">
+                                                    Подарки и скидки придут к вам сами
+                                                </p>
+                                                <p class="profile-offer-block-big-text">
+                                                    <a href="">Первый</a>
+                                                </p>
+                                            </div>
+                                            <div class="profile-offer-block-icon">
+                                                <img src="img/alien.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="profile-offer">
+                                        <h3>Оставьте свой email</h3><!--Текст предложения-->
+                                        <div class="profile-offer-block">
+                                            <div class="profile-offer-block-text">
+                                                <p class="profile-offer-block-small-text">
+                                                    Подарки и скидки придут к вам сами
+                                                </p>
+                                                <p class="profile-offer-block-big-text">
+                                                    <a href="">Второй</a>
+                                                </p>
+                                            </div>
+                                            <div class="profile-offer-block-icon">
+                                                <img src="img/alien.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="profile-offer">
+                                        <h3>Оставьте свой email</h3><!--Текст предложения-->
+                                        <div class="profile-offer-block">
+                                            <div class="profile-offer-block-text">
+                                                <p class="profile-offer-block-small-text">
+                                                    Подарки и скидки придут к вам сами
+                                                </p>
+                                                <p class="profile-offer-block-big-text">
+                                                    <a href="">Третий</a>
+                                                </p>
+                                            </div>
+                                            <div class="profile-offer-block-icon">
+                                                <img src="img/alien.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="profile-offer">
+                                        <h3>Оставьте свой email</h3><!--Текст предложения-->
+                                        <div class="profile-offer-block">
+                                            <div class="profile-offer-block-text">
+                                                <p class="profile-offer-block-small-text">
+                                                    Подарки и скидки придут к вам сами
+                                                </p>
+                                                <p class="profile-offer-block-big-text">
+                                                    <a href="">Четвертый</a>
+                                                </p>
+                                            </div>
+                                            <div class="profile-offer-block-icon">
+                                                <img src="img/alien.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                     </div>
-                    <div class="profile-offer">
-                        <h3>Оставьте свой email</h3><!--Текст предложения-->
-                        <div class="profile-offer-block">
-                            <div class="profile-offer-block-text">
-                                <p class="profile-offer-block-small-text">
-                                    Подарки и скидки придут к вам сами
-                                </p>
-                                <p class="profile-offer-block-big-text">
-                                    <a href="">Второй</a>
-                                </p>
-                            </div>
-                            <div class="profile-offer-block-icon">
-                                <img src="img/alien.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profile-offer">
-                        <h3>Оставьте свой email</h3><!--Текст предложения-->
-                        <div class="profile-offer-block">
-                            <div class="profile-offer-block-text">
-                                <p class="profile-offer-block-small-text">
-                                    Подарки и скидки придут к вам сами
-                                </p>
-                                <p class="profile-offer-block-big-text">
-                                    <a href="">Третий</a>
-                                </p>
-                            </div>
-                            <div class="profile-offer-block-icon">
-                                <img src="img/alien.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profile-offer">
-                        <h3>Оставьте свой email</h3><!--Текст предложения-->
-                        <div class="profile-offer-block">
-                            <div class="profile-offer-block-text">
-                                <p class="profile-offer-block-small-text">
-                                    Подарки и скидки придут к вам сами
-                                </p>
-                                <p class="profile-offer-block-big-text">
-                                    <a href="">Четвертый</a>
-                                </p>
-                            </div>
-                            <div class="profile-offer-block-icon">
-                                <img src="img/alien.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll">
-                    Тут скролл
-                </div>
+                </section>
             </div>
             <div class="profile-plans-container">
                 <div class="profile-plan">
@@ -258,23 +265,19 @@
             </ul> 
         </nav> 
     </section>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="slick/slick/slick.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.profile-offers').slick({
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('.splide', {
+                width: 700,
+                type   : 'slide',
+                gap: 35,
+                perPage: 2,
+                perMove: 1,
                 arrows: false,
-                autoplay: true,
-                autoplaySpeed:  4500,
-                variableWidth: true,
-                dots: true,
-                infinite: true,
-                slidesToShow: 2,
-                slidesToScroll: 1
-            });
+                classes: {
+                    presentation: '.splide__pagination babaska',
+                },
+            }).mount();
         });
     </script>
-
 </body>

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "owl.carousel": "^2.3.4"
+  }
+}

@@ -1,14 +1,239 @@
 {% extends "base.html" %}
 {% load static %}
 {% load age_filters %}
-{% block title %}Главная страница{% endblock title %}
+{% block title %}Профиль пользователя{% endblock title %}
 {% block content %}
 <div class="profile-main-container">
-    <div class="profile-container-info">
-
+    <div class="profile-container-info-container">
+        <div class="profile-container-info">
+            <div class="profile-container-avatar">
+                <img src={{ profile.avatar.url }} alt="">
+            </div>
+            <div class="profile-container-element">
+                <h3 class="text-small">Логин:</h3>
+                <h2>{{ profile.username }}</h2><!--Логин пользователя-->
+            </div>
+            <div class="profile-container-element">
+                <h3 class="text-small">Номер телефона:</h3>
+                <h2>+1-000-000-80-65</h2><!--номер пользователя-->
+            </div>
+            <div class="profile-container-element">
+                <div class="profile-container-plan">
+                    <div class="profile-container-plan-icon">
+                        <img src="img/jupiter.png" alt="">
+                    </div>
+                    <div class="profile-container-plan-info">
+                        <h3>Тарифный план:</h3>
+                        <a href=""><p class="font-profile-plan">Юпитер</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-container-element">
+                <div class="profile-container-plan">
+                    <div class="profile-container-plan-icon">
+                        <img src="img/checkmark.png" alt="">
+                    </div>
+                    <div class="profile-container-plan-info">
+                        <h2>Оплачено</h2>
+                        <h3>Следующее списание: 24 янв.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-container-app-container">
+            <div class="profile-container-app-block">
+                <div class="profile-container-app">
+                    <div class="profile-container-app-icon">
+                        <img src="img/satellite_app.png" alt="">
+                    </div>
+                    <div class="profile-container-app-info">
+                        <h2 class="text-large">HMSateline</h2>
+                        <p class="text-small">Встречайте новое приложение</p>
+                        <h3 class="text-medium">Подробнее</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="profile-container-data">
-        
+        <div class="profile-nav-container">
+            <div class="profile-nav">
+                <a href="#">Главная</a>
+            </div>
+            <div class="profile-nav">
+                <a href="#">Детализация</a>
+            </div>
+            <div class="profile-nav">
+                <a href="#">Семья</a>
+            </div>
+            <div class="profile-nav">
+                <a href="#">Настройки</a>
+            </div>
+        </div>
+        <div class="profile-history-container">
+            <div class="profile-history">
+                <a href="#">
+                    <img src="img/hist_1.jpg" alt="">
+                </a>
+            </div>
+            <div class="profile-history">
+                <a href="#">
+                    <img src="img/hist_2.jpg" alt="">
+                </a>
+            </div>
+            <div class="profile-history">
+                <a href="#">
+                    <img src="img/hist_3.jpg" alt="">
+                </a>
+            </div>
+            <div class="profile-history">
+                <a href="#">
+                    <img src="img/hist_4.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="profile-offer-container">
+            <section class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="profile-offer">
+                                    <h3>Оставьте свой email</h3><!--Текст предложения-->
+                                    <div class="profile-offer-block">
+                                        <div class="profile-offer-block-text">
+                                            <p class="profile-offer-block-small-text">
+                                                Подарки и скидки придут к вам сами
+                                            </p>
+                                            <p class="profile-offer-block-big-text">
+                                                <a href="">Первый</a>
+                                            </p>
+                                        </div>
+                                        <div class="profile-offer-block-icon">
+                                            <img src="img/alien.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="profile-offer">
+                                    <h3>Оставьте свой email</h3><!--Текст предложения-->
+                                    <div class="profile-offer-block">
+                                        <div class="profile-offer-block-text">
+                                            <p class="profile-offer-block-small-text">
+                                                Подарки и скидки придут к вам сами
+                                            </p>
+                                            <p class="profile-offer-block-big-text">
+                                                <a href="">Второй</a>
+                                            </p>
+                                        </div>
+                                        <div class="profile-offer-block-icon">
+                                            <img src="img/alien.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="profile-offer">
+                                    <h3>Оставьте свой email</h3><!--Текст предложения-->
+                                    <div class="profile-offer-block">
+                                        <div class="profile-offer-block-text">
+                                            <p class="profile-offer-block-small-text">
+                                                Подарки и скидки придут к вам сами
+                                            </p>
+                                            <p class="profile-offer-block-big-text">
+                                                <a href="">Третий</a>
+                                            </p>
+                                        </div>
+                                        <div class="profile-offer-block-icon">
+                                            <img src="img/alien.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="profile-offer">
+                                    <h3>Оставьте свой email</h3><!--Текст предложения-->
+                                    <div class="profile-offer-block">
+                                        <div class="profile-offer-block-text">
+                                            <p class="profile-offer-block-small-text">
+                                                Подарки и скидки придут к вам сами
+                                            </p>
+                                            <p class="profile-offer-block-big-text">
+                                                <a href="">Четвертый</a>
+                                            </p>
+                                        </div>
+                                        <div class="profile-offer-block-icon">
+                                            <img src="img/alien.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                </div>
+            </section>
+        </div>
+        <div class="profile-plans-container">
+            <div class="profile-plan">
+                <div class="profile-plan-title">
+                    <img src="img/satellite.png" alt="">
+                    <p>Спутниковая связь</p>
+                </div>
+                <div class="profile-plan-card">
+                    <div class="profile-plan-icon">
+                        <p>Юпитер</p> <!-- Тариф пользователя -->
+                        <img src="img/jupiter.png" alt=""> <!-- Иконка тарифа пользователя-->
+                        <p>1400 руб/мес.</p> <!-- Месячная цена-->
+                    </div>
+                    <div class="profile-plan-info-container">
+                        <div class="profile-plan-info">
+                            <div class="profile-plan-element">
+                                <img src="img/satellite_tarif.png" alt="">
+                                <p>Спутник - Квазар III</p>
+                                <div></div> <!--div для шкалы оставшихся минут/гигобайт-->
+                            </div>
+                            <div class="profile-plan-element">
+                                <img src="img/satellite_tarif.png" alt="">
+                                <p>Спутник - Квазар III</p>
+                                <div></div> <!--div для шкалы оставшихся минут/гигобайт-->
+                            </div>
+                            <div class="profile-plan-element">
+                                <img src="img/satellite_tarif.png" alt="">
+                                <p>Спутник - Квазар III</p>
+                                <div></div> <!--div для шкалы оставшихся минут/гигобайт-->
+                            </div>
+                        </div>
+                        <div class="profile-plan-info-buttons">
+                            <button>Сменить тариф</button>
+                            <button>Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<section class="footer"> 
+    <nav class="foot-links"> 
+        <ul> 
+            <li><a href="index.html">H.M.Sateline Corporation © 2023</a></li>  
+            <li><a href="#">Лицензии и сертификаты</a></li> 
+            <li><a href="#">Правовая информация</a></li> 
+        </ul> 
+    </nav> 
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new Splide('.splide', {
+            width: 700,
+            type   : 'slide',
+            gap: 35,
+            perPage: 2,
+            perMove: 1,
+            arrows: false,
+            classes: {
+                presentation: '.splide__pagination babaska',
+            },
+        }).mount();
+    });
+</script>
 {% endblock content %}
