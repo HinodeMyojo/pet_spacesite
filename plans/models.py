@@ -89,6 +89,14 @@ class Plans(BaseModel):
         on_delete=models.SET_NULL,
         null=True,
         verbose_name='Скорость интернета')
+    icon = models.ImageField(
+        'Иконка',
+        blank=True,
+        null=True,
+        upload_to='plans_icon/',
+    )
+
+
     class Meta:
         verbose_name = 'Описание тарифа'
         verbose_name_plural = 'Описание тарифов'

@@ -14,19 +14,27 @@
                 <h2>{{ profile.username }}</h2><!--Логин пользователя-->
             </div>
             <div class="profile-container-element">
-                <h3 class="text-small">Номер телефона:</h3>
-                <h2>+1-000-000-80-65</h2><!--номер пользователя-->
+                {% if profile.phone_number %}
+                    <h3 class="text-small">Номер телефона:</h3>
+                    <h2>{{ profile.phone_number }}</h2><!--номер пользователя-->
+                {% else %}
+                    <h2>Вы не указали телефон</h2><!--номер пользователя-->
+                {% endif %}
             </div>
             <div class="profile-container-element">
-                <div class="profile-container-plan">
-                    <div class="profile-container-plan-icon">
-                        <img src="img/jupiter.png" alt="">
+                {% if profile.plan %}
+                    <div class="profile-container-plan">
+                        <div class="profile-container-plan-icon">
+                            <img src={{ profile.plan.icon.url }} alt="">
+                        </div>
+                        <div class="profile-container-plan-info">
+                            <h3>Тарифный план:</h3>
+                            <a href=""><p class="font-profile-plan">{{ profile.plan.title }}</p></a>
+                        </div>
                     </div>
-                    <div class="profile-container-plan-info">
-                        <h3>Тарифный план:</h3>
-                        <a href=""><p class="font-profile-plan">Юпитер</p></a>
-                    </div>
-                </div>
+                {% else %}
+                    <h2>Тарифный план не выбран!</h2>
+                {% endif %}
             </div>
             <div class="profile-container-element">
                 <div class="profile-container-plan">

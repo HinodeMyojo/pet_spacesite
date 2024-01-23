@@ -6,6 +6,19 @@
     scroll-behavior: smooth;
 }
 
+  /* the slides */
+.slick-slide {
+    margin: 0 30px;
+    display: none;
+    float: left;
+    height: auto;
+}
+
+/* the parent */
+.slick-list {
+    margin: 0 -27px;
+}
+
 h2, h3{
     font-weight: normal;
 }
@@ -30,7 +43,7 @@ h2, h3{
 }
 .body{
     background-color: #222222c4;
-    background-image: url(img//background-second.png);
+    background-image: url(../img/background-second.png);
     background-size: cover;
     
 }
@@ -731,7 +744,7 @@ button:hover {
 }
 
 .profile-offer{
-
+    width: 327px;
     height: var(--profile-offer-height);
     background-color: var(--color-grey);
     border-radius: var(--border-radius);
@@ -968,7 +981,7 @@ button:hover {
     width: 80%;
     height: 55px;
     align-items: flex-end;
-    color: white;
+    color: #c4c4c4;
 }
 
 .news-author-container p{
@@ -978,7 +991,7 @@ button:hover {
     font-size: 15px;
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: #d3d3d3;
 }
 .news-reaction-container{
     display: flex;
@@ -996,6 +1009,7 @@ button:hover {
     align-items: center;
     justify-content: flex-start;
     border: none;
+    padding: 0px;
     width: 80px;
     height: 35px;
     color: rgb(221, 221, 221);
@@ -1028,14 +1042,23 @@ button:hover {
 .news-text-container a{
     text-decoration: none;
     display: flex;
+    gap: 10px;
     flex-direction: column;
     color: #c4c4c4;
 }
 
 /* Здесь добавлены стили для заголовка и параграфа внутри ссылки */
-.news-text-container a .news-title,
 .news-text-container a .news-content {
     text-decoration: none;
+    font-size: 18px;
+}
+
+.news-text-container a .news-title{
+    font-weight:bolder ;
+}
+
+.news-title{
+    font-size: 27px;
 }
 
 /* Остальные стили без изменений */
@@ -1072,6 +1095,7 @@ button:hover {
 }
 .news-category-date{
     display: flex;
+    gap: 1px;
     flex-direction: row;
     align-items: center;
 }
