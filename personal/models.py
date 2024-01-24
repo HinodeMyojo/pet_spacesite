@@ -1,3 +1,4 @@
+from collections.abc import Iterable
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from plans.models import Plans
@@ -39,3 +40,31 @@ class CustomUser(AbstractUser):
         blank=True,
         unique=True
         )
+    
+class UserSubscription(models.Model):
+    user = models.ForeignKey(
+        CustomUser,
+        on_delete=models.SET_NULL,
+        null=True
+    )
+    plan = models.ForeignKey(
+        Plans,
+        on_delete=models.SET_NULL,
+        null=True
+    )
+    is_active = models.BooleanField(
+        'Статус подписки',
+        default=False
+    )
+    start_date = models.DateTimeField(
+        'Дата подписки',
+        auto_now_add=True
+    )
+    next_payment_date = models.DateTimeField()
+
+    # def save(self):
+    #     self.next_payment_date = 
+    #     return super().save()
+
+    def __str__(self):
+        return f'Пользователь {self.user}, подписка {self.plan}'

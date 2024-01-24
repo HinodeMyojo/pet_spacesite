@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from django.contrib.auth.admin import UserAdmin
 
-from .models import CustomUser
+from .models import CustomUser, UserSubscription
 
 UserAdmin.fieldsets += (
     # Добавляем кортеж, где первый элемент — это название раздела в админке,
@@ -12,3 +12,4 @@ UserAdmin.fieldsets += (
 )
 
 admin.site.register(CustomUser, UserAdmin)
+admin.site.register(UserSubscription)
